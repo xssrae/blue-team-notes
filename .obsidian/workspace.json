@@ -11,9 +11,11 @@
             "id": "685dbdda9c597d07",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "IMAGES/Pasted image 20231228140400.png"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IMAGES/Pasted image 20231228140400.png",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IMAGES/Pasted image 20231228140400.png",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IMAGES/Pasted image 20231228140400.png"
+                "file": "README.md"
               }
             }
           },
@@ -152,28 +154,29 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "eda1ebd4a817dca5",
+  "active": "685dbdda9c597d07",
   "lastOpenFiles": [
-    "IMAGES",
-    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
+    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "README.md",
-    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
-    "SECURITY-OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
-    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam",
+    "THREAT INTELL/Untitled.md",
     "IMAGES/Pasted image 20231228140400.png",
+    "IMAGES",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
+    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam",
     "MALWARE ANALISYS/Sandboxing Malware.md",
     "Untitled.canvas",
-    "THREAT INTELL/Introduction to Defense Readiness Index.md",
-    "THREAT INTELL/Introduction to the (AR)² Framework.md",
+    "THREAT INTELLIGENCE/Introduction to Defense Readiness Index.md",
     "TdYZvCDHmMy4MfghP.png",
     "THREATH INTELL/Introduction to the (AR)² Framework/Untitled.md",
     "THREATH INTELL/Introduction to the (AR)² Framework",
-    "SECURITY-OPERATIONS/Endpoint Security - Cisco",
-    "SECURITY-OPERATIONS",
+    "SECURITY OPERATIONS/Endpoint Security - Cisco",
+    "SECURITY OPERATIONS",
     "NETWORKS",
     "INTELLIGENCE",
     "FORENSE",
     "MALWARE ANALISYS",
-    "THREAT INTELL"
+    "THREAT INTELLIGENCE"
   ]
 }
