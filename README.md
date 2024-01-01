@@ -9,10 +9,10 @@ Feel free to use and consult them if you want.
 - [Cisco Skills For All](https://skillsforall.com/dashboard)
 - [Tryhackme](https://tryhackme.com/)
 # Folders
-- [Forense]()
-- [Malware Analisys]()
-- [Networks]()
-- [Security Operations]()
-- [Threat Intelligence]()
+- [Forense](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSE)
+- [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
+- [Networks](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKS)
+- [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
+- [Threat Intelligence](https://github.com/xssrae/Blue-Team-Notes/tree/main/THREAT%20INTELLIGENCE)
 
 ![cat](https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true)
