@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ad1aa2e58a823630",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NETWORKS/1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "NETWORKS/1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "NETWORKS/1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "NETWORKS/1.md"
               }
             }
           },
@@ -154,10 +167,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "685dbdda9c597d07",
+  "active": "ad1aa2e58a823630",
   "lastOpenFiles": [
-    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "README.md",
+    "NETWORKS/1.md",
+    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "THREAT INTELL/Untitled.md",
     "IMAGES/Pasted image 20231228140400.png",
     "IMAGES",
