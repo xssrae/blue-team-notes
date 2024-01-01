@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "NETWORKS/1.md",
+                "file": "FORENSE/1.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "NETWORKS/1.md",
+                "file": "FORENSE/1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "NETWORKS/1.md",
+                "file": "FORENSE/1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "NETWORKS/1.md"
+                "file": "FORENSE/1.md"
               }
             }
           },
@@ -169,8 +169,9 @@
   },
   "active": "ad1aa2e58a823630",
   "lastOpenFiles": [
-    "README.md",
     "NETWORKS/1.md",
+    "FORENSE/1.md",
+    "README.md",
     "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "THREAT INTELL/Untitled.md",
     "IMAGES/Pasted image 20231228140400.png",
