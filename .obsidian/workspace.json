@@ -1,0 +1,179 @@
+{
+  "main": {
+    "id": "6ac68c6df0988d74",
+    "type": "split",
+    "children": [
+      {
+        "id": "9213c4705e3e6763",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "685dbdda9c597d07",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "IMAGES/Pasted image 20231228140400.png"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b6063a7ad67221a3",
+    "type": "split",
+    "children": [
+      {
+        "id": "88e5edf19cb7ef4e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eda1ebd4a817dca5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3f589a95b23054ac",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:SECURITY-OPERATIONS",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cdc859fcc849dce0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 278.5
+  },
+  "right": {
+    "id": "b2eae5ceaa5ce5d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "8368a3d4de439ca4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "190d1cefccd40efa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "IMAGES/Pasted image 20231228140400.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2eca0c1a306ab955",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "IMAGES/Pasted image 20231228140400.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5d8dd80c24f5efaa",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5ebc10a2b4f83888",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "IMAGES/Pasted image 20231228140400.png"
+              }
+            }
+          },
+          {
+            "id": "f29df0a641e1564b",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "eda1ebd4a817dca5",
+  "lastOpenFiles": [
+    "IMAGES",
+    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
+    "README.md",
+    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
+    "SECURITY-OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
+    "SECURITY-OPERATIONS/Vulnerability Management - Security BlueTeam",
+    "IMAGES/Pasted image 20231228140400.png",
+    "MALWARE ANALISYS/Sandboxing Malware.md",
+    "Untitled.canvas",
+    "THREAT INTELL/Introduction to Defense Readiness Index.md",
+    "THREAT INTELL/Introduction to the (AR)² Framework.md",
+    "TdYZvCDHmMy4MfghP.png",
+    "THREATH INTELL/Introduction to the (AR)² Framework/Untitled.md",
+    "THREATH INTELL/Introduction to the (AR)² Framework",
+    "SECURITY-OPERATIONS/Endpoint Security - Cisco",
+    "SECURITY-OPERATIONS",
+    "NETWORKS",
+    "INTELLIGENCE",
+    "FORENSE",
+    "MALWARE ANALISYS",
+    "THREAT INTELL"
+  ]
+}

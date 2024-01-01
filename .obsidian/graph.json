@@ -1,0 +1,58 @@
+{
+  "collapse-filter": true,
+  "search": "",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "MALWARE-ANALISYS",
+      "color": {
+        "a": 1,
+        "rgb": 7282895
+      }
+    },
+    {
+      "query": "THREAT-INTELLIGENCE",
+      "color": {
+        "a": 1,
+        "rgb": 9136616
+      }
+    },
+    {
+      "query": "SECURITY-OPERATIONS",
+      "color": {
+        "a": 1,
+        "rgb": 536486
+      }
+    },
+    {
+      "query": "FORENSE",
+      "color": {
+        "a": 1,
+        "rgb": 3964887
+      }
+    },
+    {
+      "query": "NETWORKS",
+      "color": {
+        "a": 1,
+        "rgb": 5431473
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 10,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 1.000000000000001,
+  "close": false
+}
