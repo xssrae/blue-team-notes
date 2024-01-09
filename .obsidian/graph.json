@@ -1,9 +1,9 @@
 {
   "collapse-filter": true,
   "search": "",
-  "showTags": false,
-  "showAttachments": false,
-  "hideUnresolved": false,
+  "showTags": true,
+  "showAttachments": true,
+  "hideUnresolved": true,
   "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
@@ -36,23 +36,30 @@
       }
     },
     {
-      "query": "NETWORKS",
+      "query": "NETWORKING",
       "color": {
         "a": 1,
         "rgb": 5431473
+      }
+    },
+    {
+      "query": "CRIPTOGRAPHY",
+      "color": {
+        "a": 1,
+        "rgb": 6084196
       }
     }
   ],
   "collapse-display": true,
   "showArrow": false,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
+  "nodeSizeMultiplier": 1.22291666666667,
+  "lineSizeMultiplier": 0.9421875,
   "collapse-forces": true,
   "centerStrength": 0.518713248970312,
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 1.000000000000001,
+  "scale": 0.7132754626224438,
   "close": false
 }

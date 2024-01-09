@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "685dbdda9c597d07",
+            "id": "7fd4b7baa22b2e49",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -18,21 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "ad1aa2e58a823630",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "FORENSE/1.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 278.5
+    "width": 200
   },
   "right": {
     "id": "b2eae5ceaa5ce5d4",
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "FORENSE/1.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "FORENSE/1.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "FORENSE/1.md"
+                "file": "README.md"
               }
             }
           },
@@ -167,31 +154,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ad1aa2e58a823630",
+  "active": "7fd4b7baa22b2e49",
   "lastOpenFiles": [
-    "NETWORKS/1.md",
+    "IMAGES/CANVAS.png",
+    "CANVAS.png",
+    "Pasted image 20240109172655.png",
+    "IMAGES/Pasted image 20240102132908.png",
+    "NETWORKING/Wireshark.md",
+    "NETWORKING/TCPSDump.md",
+    "NETWORKING/Protocolos.md",
+    "NETWORKING/Infra.md",
+    "NETWORKING/Camadas.png",
+    "NETWORKS/Untitled.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/4. Exercício de comprometimento de perímetro.md",
+    "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
+    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
+    "CRIPTOGRAPHY/Criar hashes.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
     "FORENSE/1.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/3. Ataques de desfiguração de sites.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/2. Ataques em Sistemas Remotos.md",
+    "CRIPTOGRAPHY",
+    "SECURITY OPERATIONS/Incident Response - Range Force/1. Tratamento de incidentes.md",
     "README.md",
     "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force",
+    "NETWORKS/1.md",
     "THREAT INTELL/Untitled.md",
     "IMAGES/Pasted image 20231228140400.png",
     "IMAGES",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
     "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
     "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam",
     "MALWARE ANALISYS/Sandboxing Malware.md",
     "Untitled.canvas",
-    "THREAT INTELLIGENCE/Introduction to Defense Readiness Index.md",
     "TdYZvCDHmMy4MfghP.png",
     "THREATH INTELL/Introduction to the (AR)² Framework/Untitled.md",
     "THREATH INTELL/Introduction to the (AR)² Framework",
     "SECURITY OPERATIONS/Endpoint Security - Cisco",
     "SECURITY OPERATIONS",
-    "NETWORKS",
+    "NETWORKING",
     "INTELLIGENCE",
-    "FORENSE",
-    "MALWARE ANALISYS",
-    "THREAT INTELLIGENCE"
+    "FORENSE"
   ]
 }
