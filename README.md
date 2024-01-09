@@ -11,7 +11,14 @@ Feel free to use and consult them if you want.
 # Folders
 - [Forense](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSE)
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
+<<<<<<< HEAD
 - [Networking](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKING)
 - [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
 - [Threat Intelligence](https://github.com/xssrae/Blue-Team-Notes/tree/main/THREAT%20INTELLIGENCE)
+=======
+- [Networks](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKS)
+- [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
+- [Threat Intelligence](https://github.com/xssrae/Blue-Team-Notes/tree/main/THREAT%20INTELLIGENCE)
+
+>>>>>>> 1b677a6d52489c8caf8cf8b958fe9424de773619
 ![cat](https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true)
