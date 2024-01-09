@@ -9,6 +9,7 @@ Feel free to use and consult them if you want.
 - [Cisco Skills For All](https://skillsforall.com/dashboard)
 - [Tryhackme](https://tryhackme.com/)
 - [LetsDefend](https://app.letsdefend.io/)
+- [Security Blue Team](https://www.securityblue.team/)
 # Folders
 - [Forense](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSE)
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
