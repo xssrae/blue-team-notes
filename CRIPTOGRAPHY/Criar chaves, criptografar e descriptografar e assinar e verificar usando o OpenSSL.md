@@ -3,7 +3,6 @@ tags:
   - CRIPTOGRAPHY
 ---
 # Gerar chaves
-
 Antes de criptografar ou descriptografar qualquer item, você precisa de uma chave privada e uma pública. Então vamos criá-las primeiro.
 ### **Chave privada**
 Um par de chaves consiste em uma chave pública que você pode divulgar e uma chave privada que precisa ser mantida em segredo. Psiu. :) Quando alguém quiser enviar dados e garantir que ninguém os veja, eles podem ser criptografados com sua chave pública. Os dados criptografados com essa chave só podem ser descriptografados com sua chave privada. Assim só você consegue ver os dados originais. Por isso é tão importante manter as chaves privadas em segredo. Se alguém tiver uma cópia dela, poderá descriptografar os dados enviados a você. Isso não é nada bom!

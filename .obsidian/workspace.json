@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7fd4b7baa22b2e49",
+            "id": "2d2d1b548dcb74a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md"
               }
             }
           },
@@ -154,8 +154,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7fd4b7baa22b2e49",
+  "active": "eda1ebd4a817dca5",
   "lastOpenFiles": [
+    "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
+    "Blocos de Anotações do OneNote",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
+    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
+    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
+    "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
+    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
+    "MALWARE ANALISYS/Rangeforce/1. Sandboxing Malware.md",
+    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
+    "MALWARE ANALISYS/Rangeforce",
+    "MALWARE ANALISYS/LetsDefend",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend",
+    "NETWORKING/Camadas.png",
+    "SECURITY OPERATIONS/Gerenciamento de Ameaças Cibernéticas/1. Governança.md",
+    "SECURITY OPERATIONS/Gerenciamento de Ameaças Cibernéticas",
+    "CRIPTOGRAPHY/Criar hashes.md",
+    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
+    "FORENSE/1.md",
+    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough",
+    "README.md",
     "IMAGES/CANVAS.png",
     "CANVAS.png",
     "Pasted image 20240109172655.png",
@@ -164,37 +188,17 @@
     "NETWORKING/TCPSDump.md",
     "NETWORKING/Protocolos.md",
     "NETWORKING/Infra.md",
-    "NETWORKING/Camadas.png",
     "NETWORKS/Untitled.md",
     "SECURITY OPERATIONS/Incident Response - Range Force/4. Exercício de comprometimento de perímetro.md",
-    "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
-    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
-    "CRIPTOGRAPHY/Criar hashes.md",
     "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
     "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
-    "FORENSE/1.md",
     "SECURITY OPERATIONS/Incident Response - Range Force/3. Ataques de desfiguração de sites.md",
-    "SECURITY OPERATIONS/Incident Response - Range Force/2. Ataques em Sistemas Remotos.md",
     "CRIPTOGRAPHY",
-    "SECURITY OPERATIONS/Incident Response - Range Force/1. Tratamento de incidentes.md",
-    "README.md",
-    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "SECURITY OPERATIONS/Incident Response - Range Force",
-    "NETWORKS/1.md",
-    "THREAT INTELL/Untitled.md",
     "IMAGES/Pasted image 20231228140400.png",
     "IMAGES",
-    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
     "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam",
-    "MALWARE ANALISYS/Sandboxing Malware.md",
     "Untitled.canvas",
-    "TdYZvCDHmMy4MfghP.png",
-    "THREATH INTELL/Introduction to the (AR)² Framework/Untitled.md",
-    "THREATH INTELL/Introduction to the (AR)² Framework",
-    "SECURITY OPERATIONS/Endpoint Security - Cisco",
-    "SECURITY OPERATIONS",
-    "NETWORKING",
-    "INTELLIGENCE",
-    "FORENSE"
+    "TdYZvCDHmMy4MfghP.png"
   ]
 }

@@ -48,6 +48,20 @@
         "a": 1,
         "rgb": 6084196
       }
+    },
+    {
+      "query": "LetsDefend",
+      "color": {
+        "a": 1,
+        "rgb": 3565011
+      }
+    },
+    {
+      "query": "Rangeforce",
+      "color": {
+        "a": 1,
+        "rgb": 661857
+      }
     }
   ],
   "collapse-display": true,
@@ -60,6 +74,6 @@
   "repelStrength": 10,
   "linkStrength": 1,
   "linkDistance": 250,
-  "scale": 0.7132754626224438,
+  "scale": 0.5087618855792604,
   "close": false
 }
