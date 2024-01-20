@@ -5,7 +5,7 @@
   "showAttachments": true,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
       "query": "MALWARE-ANALISYS",
@@ -66,14 +66,14 @@
   ],
   "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1.22291666666667,
-  "lineSizeMultiplier": 0.9421875,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.5087618855792604,
+  "textFadeMultiplier": -2.4,
+  "nodeSizeMultiplier": 2.0140625,
+  "lineSizeMultiplier": 0.457291666666667,
+  "collapse-forces": false,
+  "centerStrength": 0.307766272189349,
+  "repelStrength": 7.10207100591716,
+  "linkStrength": 0.908949704142012,
+  "linkDistance": 216,
+  "scale": 0.5087618855792616,
   "close": false
 }

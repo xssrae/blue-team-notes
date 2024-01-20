@@ -1,0 +1,2829 @@
+/*
+
+Principles:
+1. Use the base colour to distinguish between different vaults.
+2. Separate content (white/black background) from controls (accent colour background)
+3. Use spacing for grouping rather than lines
+4. Distinguish controls visually
+5. Buttons are lighter, content containers darker
+
+*/
+/* Plugin compatibility */
+
+/* @plugins
+core:
+- audio-recorder
+- backlink
+- bookmarks
+- command-palette
+- daily-notes
+- file-explorer
+- file-recovery
+- global-search
+- graph
+- note-composer
+- outgoing-link
+- outline
+- page-preview
+- properties-view
+- random-note
+- slash-commands
+- starred
+- switcher
+- sync
+- tag-pane
+- templates
+- word-count
+- workspaces
+*/
+/* @settings
+
+name: Kakano
+id: kakano-style
+settings:
+  -
+    id: heading-color-settings
+    title: Color settings
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: base
+    title: Base color
+    description: 'Base color, from which the Kakano theme will generate background gradients.'
+    type: variable-color
+    format: hsl-split
+    default: '#2176B0'
+  -
+    id: theme-value-gradientContrast
+    title: 'Background gradient contrast'
+    description: 'Degree of contrast for background gradients. Set to zero for a flat background color.'
+    type: variable-number-slider
+    default: 0.2
+    min: 0
+    max: 1
+    step: 0.1
+  -
+    id: theme-value-darkModeNoteBg
+    title: 'Dark mode note background'
+    description: 'In dark mode, note backgrounds can be near black (default) or full black. Near black is a bit easier on the eyes. Full black will save a little energy on OLED screens which will switch back pixels completely off. And some people just like the way it looks.'
+    type: class-select
+    allowEmpty: false
+    default: theme-value-darkModeNoteBgNearBlack
+    options:
+      -
+        label: 'Near black (less eye strain)'
+        value: theme-value-darkModeNoteBgNearBlack
+      -
+        label: 'Full black (OLED screen will switch pixels off)'
+        value: theme-value-darkModeNoteBgFullBlack
+  -
+    id: heading-layout-settings
+    title: Layout settings
+    type: heading
+    level: 1
+    collapsed: false
+  -
+    id: setting-properties-position
+    title: 'Properties position'
+    description: 'Place properties before or after your main note content. Note that this only applies to Live Preview mode'
+    type: class-select
+    allowEmpty: false
+    default: 'setting-properties-position-above'
+    options:
+      -
+        label: 'Above main note content'
+        value: 'setting-properties-position-above'
+      -
+        label: 'Below main note content'
+        value: 'setting-properties-position-below'
+*/
+
+/********* Variables *********/
+
+body {
+  --background-input: var(--theme-color-baseVeryVeryTransparent);
+  --background-modifier-message: var(--theme-color-noticeBg);
+  --background-secondary: transparent;
+  --callout-padding: 0.75em 1.5em;
+  --checkbox-border-color-hover: var(--interactive-accent-hover);
+  --checkbox-border-color: var(--interactive-accent);
+  --checkbox-color: var(--interactive-accent);
+  --divider-width: 0;
+  --file-line-width: 40rem;
+  --file-margins: 0;
+  --heading-spacing: 0.67em;
+  --inline-title-size: var(--font-ui-medium);
+  --inline-title-weight: bold;
+  --input-border-width: 2px;
+  --metadata-divider-width: 0;
+  --metadata-gap: 0.5em;
+  --metadata-property-background-hover: var(--nav-item-background-hover);
+  --modal-border-color: black;
+  --modal-border-width: 0;
+  --nav-item-background-hover: var(--theme-color-baseSlightlyTransparent);
+  --nav-item-children-margin-left: 1em;
+  --nav-item-children-padding-left: 0.5em;
+  --nav-item-padding: 0.375em 0.5em 0.375em 0.5em;
+  --nav-item-parent-padding: 0.25em 0 0.25em 0;
+  --nav-item-color-highlighted: var(--nav-item-hover);
+  --p-spacing: 0;
+  --pill-focus-left-adjust: 0;
+  --pill-focus-width: 100%;
+  --prompt-border-color: transparent;
+  --prompt-border-width: 0;
+  --ribbon-background-collapsed: transparent;
+  --ribbon-background: transparent;
+  --ribbon-width: 3em;
+  --slider-track-background: var(--theme-color-baseTransparent);
+  --status-bar-background: var(--theme-color-gradientTOp);
+  --status-bar-text-color: var(--text-normal);
+  --tab-container-background: transparent;
+  --tab-curve: calc(var(--tab-radius) * 0.5);
+  --tab-outline-width: 0;
+  --tab-radius-active: 0.25em;
+  --tab-radius: 0.25em;
+  --titlebar-background-focused: transparent;
+  --titlebar-background: transparent;
+
+  /* Base all theme colours off these */
+  /* The base HSL variables will be overridden by Style Settings if installed, otherwise they'll use the accent colour. */
+  --base-h: var(--accent-h);
+  --base-s: var(--accent-s);
+  --base-l: var(--accent-l);
+
+  /* The base color */
+  --theme-color-base: hsl(var(--base-h), var(--base-s), var(--base-l));
+
+  /*  Base colour variants */
+  --theme-color-baseVeryVeryLightened: color-mix(in srgb, var(--theme-color-base), white calc(100% * 0.95));
+  --theme-color-baseVeryLightened: color-mix(in srgb, var(--theme-color-base), white calc(100% * 0.80));
+  --theme-color-baseLightened: color-mix(in srgb, var(--theme-color-base), white calc(100% * 0.60));
+  --theme-color-baseSomewhatLightened: color-mix(in srgb, var(--theme-color-base), white calc(100% * 0.4));
+  --theme-color-baseSlightlyLightened: color-mix(in srgb, var(--theme-color-base), white calc(100% * 0.25));
+  --theme-color-baseSlightlyDarkened: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.25));
+  --theme-color-baseSomewhatDarkened: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.4));
+  --theme-color-baseDarkened: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.60));
+  --theme-color-baseVeryDarkened: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.80));
+  --theme-color-baseVeryVeryDarkened: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.90));
+
+  /* Base color with transparency */
+  --theme-color-baseTransparent: hsla(var(--base-h), var(--base-s), var(--base-l), 0.5);
+  --theme-color-baseSlightlyTransparent: hsla(var(--base-h), var(--base-s), var(--base-l), 0.75);
+  --theme-color-baseVeryTransparent: hsla(var(--base-h), var(--base-s), var(--base-l), 0.25);
+  --theme-color-baseVeryVeryTransparent: hsla(var(--base-h), var(--base-s), var(--base-l), 0.125);
+  --theme-color-lightenTransparent: rgba(255,255,255, 0.5);
+  --theme-color-lightenSlightlyTransparent: rgba(255,255,255, 0.25);
+  --theme-color-darkenTransparent: rgba(0,0,0, 0.5);
+  --theme-color-darkenSlightlyTransparent: rgba(0,0,0, 0.25);
+
+  /* Hues */
+  --color-red: hsl(356, var(--base-s), var(--base-l));
+  --color-orange: hsl(27, var(--base-s), var(--base-l));
+  --color-yellow: hsl(44, var(--base-s), var(--base-l));
+  --color-green: hsl(124, var(--base-s), var(--base-l));
+  --color-cyan: hsl(179, var(--base-s), var(--base-l));
+  --color-blue: hsl(219, var(--base-s), var(--base-l));
+  --color-purple: hsl(253, var(--base-s), var(--base-l));
+  --color-pink: hsl(331, var(--base-s), var(--base-l));
+
+  /* Gradients */
+  --theme-gradient-topToBottom: linear-gradient(0deg, var(--theme-color-gradientTop) 0%, var(--theme-color-gradientBottom) 100%);
+  --theme-gradient-bottomToTop: linear-gradient(0deg, var(--theme-color-gradientBottom) 0%, var(--theme-color-gradientTop) 100%);
+  /* 0 for flat colour with no gradient. 1 for extreme gradient. Default to 0.2, */
+  --theme-value-gradientContrast: 0.2;
+
+  /* Other new variables for this theme */
+  --theme-color-tabBgInactiveHover: var(--theme-color-baseSlightlyTransparent);
+  --color-theme-dragTarget: var(--theme-color-baseTransparent);
+  --color-theme-dragTargetBg: var(--theme-color-baseVeryTransparent);}
+body,
+body .metadata-property:not([data-property-key="tags"]),
+body .metadata-property[data-property-key="tags"] {
+  --pill-padding-x: 1em;
+  --pill-padding-y: 0.125em;
+}
+
+.theme-light {
+  /* Built-in variables */
+  --background-modifier-active-hover-alt: var(--theme-color-baseSlightlyLightened);
+  --background-modifier-active-hover: var(--theme-color-baseLightened);
+  --background-modifier-border-focus: var(--theme-color-base);
+  --background-modifier-border: var(--theme-color-baseSlightlyLightened);
+  --background-modifier-hover: var(--theme-color-base);
+  --blockquote-border-color: var(--theme-color-baseVeryLightened);
+  --empty-pane-color: var(--theme-color-baseDarkened);
+  --icon-color-focused: white;
+  --icon-color-hover: hsl(var(--base-h), calc(var(--base-s) * 0.2), calc(var(--base-l)*1.5));
+  --icon-color-hover: white;
+  --icon-color: var(--theme-color-base);
+  --modal-background: var(--theme-color-baseVeryLightened);
+  --nav-collapse-icon-color-collapsed: var(--theme-color-baseSlightlyTransparent);
+  --nav-collapse-icon-color: var(--theme-color-baseSlightlyTransparent);
+  --nav-indentation-guide-color: var(--theme-color-baseVeryTransparent);
+  --nav-item-background-active: var(--theme-color-base);
+  --nav-item-background-selected: var(--theme-color-baseVeryTransparent);
+  --nav-item-color-active: var(--theme-color-baseVeryLightened);
+  --nav-item-color: var(--theme-color-baseVeryDarkened);
+  --nav-item-color-hover: white;
+  --search-icon-color: var(--theme-color-base);
+  --shadow-l: 0 0.125rem 0.5rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.5), 0.2), 0 0.875rem 1.7rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.5), 0.15), 0 2rem 6rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.5), 0.25);
+  --status-bar-text-color: black;
+  --tab-background-active: var(--background-primary);
+  --tab-background-inactive: var(--theme-color-baseVeryLightened);
+  --text-normal: var(--theme-color-baseVeryVeryDarkened);
+  --text-faint: var(--theme-color-baseDarkened);
+  --background-prompt: var(--theme-color-baseVeryVeryLightened);
+  --interactive-accent: var(--theme-color-base);
+  --interactive-accent-hover: var(--theme-color-base);
+  --table-border-color: var(--theme-color-baseLightened);
+  --table-header-border-color: var(--theme-color-baseLightened);
+
+  --metadata-property-background: var(--theme-color-baseVeryVeryLightened);
+  --metadata-property-background-hover: var(--theme-color-baseVeryLightened);
+  --metadata-label-background-active: var(--theme-color-baseVeryVeryLightened);
+  --metadata-input-background-active: var(--theme-color-baseVeryVeryLightened);
+
+  /* Background for content area */
+  --background-primary: white;
+  /* Background for controls area */
+  --background-secondary: var(--theme-color-baseLightened);
+
+  /* New variables for this theme */
+  --background-side-dock-actions: transparent;
+  --background-switcher-active: var(--theme-color-base);
+  --color-text-interactive-active: var(--color-text-interactive);
+  --color-text-interactive-content-area-hover: var(--theme-color-baseVeryLightened);
+  --color-text-interactive-content-area: var(--theme-color-base);
+  --color-text-interactive-hover: var(--theme-color-baseLightened);
+  --color-text-interactive: var(--theme-color-baseDarkened);
+  --controls-container-background: var(--theme-color-baseVeryLightened);
+  --theme-color-communityItemBg: var(--theme-color-baseVeryLightened);
+  --theme-color-communityItemBgActive: var(--theme-color-base);
+  --theme-color-communityItemBgHover: var(--theme-color-baseLightened);
+  --theme-color-communityItemBgSelected: var(--theme-color-baseSlightlyLightened);
+  --theme-color-contentItemBg: var(--theme-color-lightenTransparent);
+  --theme-color-contentItemBgActive: var(--theme-color-base);
+  --theme-color-contentItemBgHover: var(--theme-color-lightenSlightlyTransparent);
+  --theme-color-controlBg: var(--theme-color-baseVeryVeryLightened);
+  --theme-color-controlBgHover: var(--theme-color-base);
+  --theme-color-controlBgLowWeight: var(--theme-color-baseVeryLightened);
+  --theme-color-controlText: var(--theme-color-baseDarkened);
+  --theme-color-controlTextHover: var(--theme-color-baseVeryLightened);
+  --theme-color-emptyStateBg: var(--theme-color-baseVeryLightened);
+  --theme-color-graphLine: var(--theme-color-baseVeryDarkened);
+  --theme-color-graphViewBg: var(--theme-color-baseVeryVeryLightened);
+  --theme-color-hotkey: var(--theme-color-base);
+  --theme-color-inputBorder: var(--theme-color-baseSlightlyLightened);
+  --theme-color-inputPlaceholder: var(--theme-color-base);
+  --theme-color-interactiveActive: var(--theme-color-baseSlightlyLightened);
+  --theme-color-log: var(--theme-color-baseVeryDarkened);
+  --theme-color-logBg: var(--theme-color-baseSlightlyLightened);
+  --theme-color-modalContentBg: var(--theme-color-baseLightened);
+  --theme-color-navFileTag: var(--theme-color-base);
+  --theme-color-navFileTagActive: var(--nav-item-color-active);
+  --theme-color-navFileTagActiveBorder: var(--nav-item-color-active);
+  --theme-color-navFileTagBorder: var(--theme-color-base);
+  --theme-color-navigationButtonBgHover: var(--theme-color-baseVeryTransparent);
+  --theme-color-notice: var(--theme-color-baseVeryVeryLightened);
+  --theme-color-noticeBg: var(--theme-color-baseVeryDarkened);
+  --theme-color-settingsBg: var(--theme-color-baseVeryLightened);
+  --theme-color-settingsBgStripe: var(--theme-color-baseVeryVeryLightened);
+  --theme-color-settingsGroupBg: var(--theme-color-lightenTransparent);
+  --theme-color-suggestionBg: var(--theme-color-baseVeryLightened);
+  --theme-color-tableHeaderBg: var(--theme-color-baseVeryVeryLightened);
+  --tag-color: hsl(var(--accent-h), calc(var(--accent-s)), calc(var(--accent-l)*0.8));
+  --tag-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+  --theme-color-tagBgSidebar: hsla(var(--accent-h), calc(var(--accent-s)*1.5), calc(var(--accent-l)*1), 0.4);
+  --theme-color-tagSidebar: hsl(var(--accent-h), calc(var(--accent-s)*1.5), calc(var(--accent-l)*0.4));
+  --theme-color-textMeta: var(--theme-color-base);
+  --theme-color-textSelected: var(--theme-color-baseVeryLightened);
+  --theme-color-textTabInactive: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-warningBg: var(--theme-color-baseVeryVeryLightened);
+  --theme-shadow-control: 0px 1px 2px hsla(var(--base-h), calc(var(--base-s) * 1.5), calc(var(--base-l)*0.75), 0.5);
+  --theme-shadow-input: 0px 1px 2px hsla(var(--base-h), calc(var(--base-s) * 1.5), calc(var(--base-l)*0.5), 0.2), 0px 3.4px 6.7px hsla(var(--base-h), calc(var(--base-s) * 1), calc(var(--base-l)*0.5), 0.15), 0px 15px 30px hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.5), 0.05);
+
+  /*
+  Gradient from contrast setting
+
+  At 0 contrast, this sets both ends of the gradient to base color plus 50% white
+  At 0.2 (default), it matches --theme-color-baseLightened and --theme-color-baseSomewhatLightened
+  At 1, the top is white, bottom is base color
+  */
+  --theme-color-gradientTop: color-mix(in srgb, var(--theme-color-base), white calc(100% * (0.5 + 0.5 * var(--theme-value-gradientContrast))));
+  --theme-color-gradientBottom: color-mix(in srgb, var(--theme-color-base), white calc(100% * (0.5 - 0.5 * var(--theme-value-gradientContrast))));
+}
+.theme-light,
+.theme-light .metadata-property:not([data-property-key="tags"]),
+.theme-light .metadata-property[data-property-key="tags"] {
+  --pill-background: var(--theme-color-baseSlightlyTransparent);
+  --pill-background-hover: var(--theme-color-base);
+  --pill-color: white;
+  --pill-color-hover: white;
+  --pill-color-remove: var(--theme-color-baseVeryLightened);
+  --pill-color-remove-hover: var(--theme-color-baseVeryLightened);
+  --pill-background-remove-hover: var(--theme-color-baseSlightlyLightened);
+}
+
+.theme-dark {
+  /* Built-in variables */
+  --background-modifier-active-hover-alt: var(--theme-color-baseSlightlyDarkened);
+  --background-modifier-active-hover: var(--theme-color-baseDarkened);
+  --background-modifier-border-focus: var(--theme-color-baseSlightlyDarkened);
+  --background-modifier-border: var(--theme-color-baseSlightlyDarkened);
+  --background-modifier-hover: var(--theme-color-base);
+  --blockquote-border-color: var(--theme-color-baseVeryDarkened);
+  --empty-pane-color: var(--theme-color-baseDarkened);
+  --icon-color-focused: var(--theme-color-baseVeryLightened);
+  --icon-color-hover: hsl(var(--base-h), calc(var(--base-s) * 0.2), calc(var(--base-l)*1.5));
+  --icon-color-hover: var(--theme-color-baseVeryLightened);
+  --icon-color: var(--theme-color-base);
+  --modal-background: var(--theme-color-baseVeryDarkened);
+  --nav-collapse-icon-color-collapsed: var(--theme-color-baseSlightlyTransparent);
+  --nav-collapse-icon-color: var(--theme-color-baseSlightlyTransparent);
+  --nav-indentation-guide-color: var(--theme-color-baseVeryTransparent);
+  --nav-item-background-active: var(--theme-color-base);
+  --nav-item-background-selected: var(--theme-color-baseVeryTransparent);
+  --nav-item-color-active: var(--theme-color-baseVeryDarkened);
+  --nav-item-color: var(--theme-color-baseLightened);
+  --nav-item-color-hover: black;
+  --search-icon-color: var(--theme-color-base);
+  --shadow-l: 0 0.125rem 0.5rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.1), 0.2), 0 0.875rem 1.7rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.1), 0.15), 0 2rem 6rem hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.1), 0.25);
+
+  --tab-background-active: var(--background-primary);
+  --tab-background-inactive: var(--theme-color-baseVeryDarkened);
+  --text-normal: var(--theme-color-baseLightened);
+  --text-faint: var(--theme-color-baseSlightlyLightened);
+  --background-prompt: var(--theme-color-baseVeryDarkened);
+  --interactive-accent: var(--theme-color-base);
+  --table-border-color: var(--theme-color-baseDarkened);
+  --table-header-border-color: var(--theme-color-baseDarkened);
+
+  --metadata-property-background: var(--theme-color-baseVeryVeryDarkened);
+  --metadata-property-background-hover: var(--theme-color-baseVeryDarkened);
+  --metadata-label-background-active: var(--theme-color-baseVeryVeryDarkened);
+  --metadata-input-background-active: var(--theme-color-baseVeryVeryDarkened);
+
+  /* Background for content area */
+  /* This may be overridden below by the theme-value-darkModeNoteBg style setting. */
+  --background-primary: color-mix(in srgb, var(--theme-color-base), black calc(100% * 0.95));
+  /* Background for controls area */
+  --background-secondary: var(--theme-color-baseDarkened);
+
+  /* New variables for this theme */
+  --background-side-dock-actions: transparent;
+  --background-switcher-active: var(--theme-color-base);
+  --color-text-interactive-active: var(--color-text-interactive);
+  --color-text-interactive-content-area-hover: var(--theme-color-baseVeryDarkened);
+  --color-text-interactive-content-area: var(--theme-color-baseLightened);
+  --color-text-interactive-hover: var(--theme-color-baseDarkened);
+  --color-text-interactive: var(--theme-color-baseLightened);
+  --controls-container-background: var(--theme-color-baseVeryDarkened);
+  --theme-color-communityItemBg: var(--theme-color-baseVeryDarkened);
+  --theme-color-communityItemBgActive: var(--theme-color-base);
+  --theme-color-communityItemBgHover: var(--theme-color-baseDarkened);
+  --theme-color-communityItemBgSelected: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-contentItemBg: rgba(0, 0, 0, 0.2);
+  --theme-color-contentItemBgActive: var(--theme-color-base);
+  --theme-color-contentItemBgHover: rgba(0, 0, 0, 0.1);
+  --theme-color-controlBg: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-controlBgHover: var(--theme-color-base);
+  --theme-color-controlBgLowWeight: var(--theme-color-baseVeryDarkened);
+  --theme-color-controlText: var(--theme-color-baseLightened);
+  --theme-color-controlTextHover: var(--theme-color-baseVeryDarkened);
+  --theme-color-emptyStateBg: var(--theme-color-baseVeryDarkened);
+  --theme-color-graphLine: var(--theme-color-baseVeryLightened);
+  --theme-color-graphViewBg: var(--theme-color-baseVeryVeryDarkened);
+  --theme-color-hotkey: var(--theme-color-base);
+  --theme-color-inputBorder: var(--theme-color-baseSlightlyLightened);
+  --theme-color-inputPlaceholder: var(--theme-color-base);
+  --theme-color-interactiveActive: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-modalContentBg: var(--theme-color-baseDarkened);
+  --theme-color-navFileTag: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-navFileTagActive: var(--nav-item-color-active);
+  --theme-color-navFileTagActiveBorder: var(--nav-item-color-active);
+  --theme-color-navFileTagBorder: var(--theme-color-baseSlightlyDarkened);
+  --theme-color-navigationButtonBgHover: var(--theme-color-baseVeryTransparent);
+  --theme-color-notice: var(--theme-color-baseVeryVeryDarkened);
+  --theme-color-noticeBg: var(--theme-color-baseVeryVeryLightened);
+  --theme-color-settingsBg: var(--theme-color-baseVeryDarkened);
+  --theme-color-settingsBgStripe: var(--theme-color-baseVeryVeryDarkened);
+  --theme-color-settingsGroupBg: var(--theme-color-darkenTransparent);
+  --theme-color-suggestionBg: var(--theme-color-baseVeryDarkened);
+  --theme-color-tableHeaderBg: var(--theme-color-baseVeryVeryDarkened);
+
+  --tag-color: hsl(var(--accent-h), calc(var(--accent-s)*1.5), calc(var(--accent-l)*1.2));
+  --tag-background: hsl(var(--accent-h), var(--accent-s), var(--accent-l), 0.2);
+  --theme-color-tagBgSidebar: hsla(var(--accent-h), calc(var(--accent-s)*1.5), calc(var(--accent-l)*1), 0.4);
+  --theme-color-tagSidebar: hsl(var(--accent-h), calc(var(--accent-s)*1.5), calc(var(--accent-l)*1.3));
+
+  --theme-color-textMeta: var(--theme-color-base);
+  --theme-color-textSelected: var(--theme-color-baseVeryDarkened);
+  --theme-color-textTabInactive: var(--theme-color-baseSlightlyLightened);
+  --theme-color-warningBg: var(--theme-color-baseVeryVeryLightened);
+  --theme-shadow-control: 0px 1px 2px hsla(var(--base-h), calc(var(--base-s) * 0.1), calc(var(--base-l)*0.75), 0.1);
+  --theme-shadow-input: 0px 1px 2px hsla(var(--base-h), calc(var(--base-s) * 0.5), calc(var(--base-l)*0.1), 0.5), 0px 3.4px 6.7px hsla(var(--base-h), calc(var(--base-s) * 1), calc(var(--base-l)*0.1), 0.25), 0px 15px 30px hsla(var(--base-h), calc(var(--base-s) * 0.75), calc(var(--base-l)*0.1), 0.15);
+
+  /*
+  Gradient from contrast setting
+
+  At 0 contrast, this sets both ends of the gradient to base color plus 70% black
+  At 0.2 (default), it matches --theme-color-baseDarkened and --theme-color-baseVeryDarkened
+  At 1, the top is base color, bottom pure black
+  */
+  --theme-color-gradientTop: color-mix(in srgb, var(--theme-color-base), black calc(100% * (0.7 - 0.5 * var(--theme-value-gradientContrast))));
+  --theme-color-gradientBottom: color-mix(in srgb, var(--theme-color-base), black calc(100% * (0.7 + 0.5 * var(--theme-value-gradientContrast))));
+}
+.theme-dark,
+.theme-dark .metadata-property:not([data-property-key="tags"]),
+.theme-dark .metadata-property[data-property-key="tags"] {
+  --pill-background: var(--theme-color-baseSlightlyTransparent);
+  --pill-background-hover: var(--theme-color-base);
+  --pill-color: black;
+  --pill-color-hover: black;
+  --pill-color-remove: var(--theme-color-baseVeryDarkened);
+  --pill-color-remove-hover: var(--theme-color-baseVeryDarkened);
+  --pill-background-remove-hover: var(--theme-color-baseSlightlyDarkened);
+}
+.theme-dark.theme-value-darkModeNoteBgFullBlack {
+  /* Override note background when specified by style settings. */
+  /* There's no equivalent of this for light mode. */
+  --background-primary: black;
+}
+
+/********* Markdown Typography *********/
+
+body {
+  --blockquote-border-thickness: 0.25em;
+  /* Use the system font by default for both text and interface, unless user has chosen something else.  */
+  --font-default: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-monospace-default: ui-monospace, Menlo, SFMono-Regular, Consolas, "Roboto Mono", 'Source Code Pro', monospace;
+  --font-text-theme: var(--font-default);
+  --font-interface-theme: var(--font-default);
+  --font-monospace-theme: var(--font-monospace-default);
+  --font-text-size: 16px;
+  --h1-size: 2.25em;
+  --h2-size: 1.5em;
+  --h3-size: 1.25em;
+  --h4-size: 1em;
+  --h5-size: 1em;
+  --h6-size: 1em;
+  --h1-weight: 200;
+  --h2-weight: 300;
+  --h3-weight: 400;
+  --h4-weight: 500;
+  --h5-weight: 400;
+  --h6-weight: 300;
+  --line-height-normal: 1.6;
+  --h1-line-height: var(--line-height-normal);
+  --h2-line-height: var(--line-height-normal);
+  --h3-line-height: var(--line-height-normal);
+  --h4-line-height: var(--line-height-normal);
+  --h5-line-height: var(--line-height-normal);
+  --h6-line-height: var(--line-height-normal);
+
+  /* Hanging punctuation isn't supported in Electron yet (Dec 2023), but here for when it is. */
+  hanging-punctuation: first allow-end last;
+}
+/* More compact typography to fit more on small screens */
+.is-phone {
+  --h1-size: 2em;
+  --h2-size: 1.25em;
+  --h3-size: 1.125em;
+  --h4-size: 1em;
+  --h5-size: 1em;
+  --h6-size: 1em;
+  --h1-weight: 200;
+  --h2-weight: 400;
+  --h3-weight: 500;
+  --h4-weight: 600;
+  --h5-weight: 500;
+  --h6-weight: 400;
+  --h1-line-height: 1.125;
+  --h2-line-height: 1.25;
+  --h3-line-height: 1.25;
+  --line-height-normal: 1.6;
+}
+
+.markdown-rendered div:has( > :is(p,pre,table,ul,ol)) + div > :is(h1,h2,h3,h4,h5,h6) {
+    margin-top: 0;
+}
+
+/* Space before headings... */
+.markdown-source-view .cm-line.HyperMD-header,
+.markdown-source-view.is-live-preview .cm-line.HyperMD-header,
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 {
+  padding: var(--heading-spacing) 0 0 0;
+  margin: 0;
+}
+/* ...except when they immediately follow another heading */
+.markdown-source-view :is(
+  .cm-line.HyperMD-header-1,
+  .cm-line.HyperMD-header-2,
+  .cm-line.HyperMD-header-3,
+  .cm-line.HyperMD-header-4,
+  .cm-line.HyperMD-header-5,
+  .cm-line.HyperMD-header-6
+) + :is(
+  .cm-line.HyperMD-header-1,
+  .cm-line.HyperMD-header-2,
+  .cm-line.HyperMD-header-3,
+  .cm-line.HyperMD-header-4,
+  .cm-line.HyperMD-header-5,
+  .cm-line.HyperMD-header-6
+) {
+  /* Using padding as margin has an !important applied elsewhere */
+  padding-top: 0;
+}
+.markdown-rendered :is(
+  .markdown-preview-section > div:has(h1),
+  .markdown-preview-section > div:has(h2),
+  .markdown-preview-section > div:has(h3),
+  .markdown-preview-section > div:has(h4),
+  .markdown-preview-section > div:has(h5),
+  .markdown-preview-section > div:has(h6)
+) + :is(
+  .markdown-preview-section > div:has(h1),
+  .markdown-preview-section > div:has(h2),
+  .markdown-preview-section > div:has(h3),
+  .markdown-preview-section > div:has(h4),
+  .markdown-preview-section > div:has(h5),
+  .markdown-preview-section > div:has(h6)
+) :is(h1, h2, h3, h4, h5, h6) {
+  padding-top: 0;
+}
+/* ...or they're first on the page */
+.markdown-source-view .cm-line.HyperMD-header:first-child,
+.markdown-rendered .mod-header + div > h1 {
+    padding-top: 0;
+}
+
+.markdown-source-view .HyperMD-quote,
+.callout {
+  font-weight: 300;
+}
+
+.markdown-source-view .cm-line.HyperMD-codeblock {
+  /* Matched to --callout-padding */
+  padding: 0 1.5em;
+}
+
+.markdown-source-view .code-block-flair {
+  top: 0.5em;
+  right: 0.5em;
+}
+
+.markdown-source-view.mod-cm6 hr,
+.markdown-rendered hr {
+  display: flex;
+  align-items: center;
+  border: none;
+  border-top: var(--hr-thickness) solid;
+  border-color: var(--hr-color);
+  margin: 2em 0 !important;
+}
+
+/***** Tables *****/
+
+.markdown-rendered th,
+.markdown-rendered thead tr > th:nth-child(2n+2) {
+  background: var(--theme-color-tableHeaderBg);
+}
+
+/* Markdown formatting shown while editing e.g. ### for headings */
+.cm-formatting.cm-formatting-header {
+  color: var(--theme-color-textMeta);
+  font-size: 0.8rem !important;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/***** Markdown Checkboxes *****/
+
+/* Alternate checkboxes idea borrowed from Minimal theme */
+.markdown-source-view.mod-cm6 .task-list-item-checkbox {
+  border-radius: 0.33em;
+  border-color: var(--color-text-interactive-content-area);
+  /* Needs room at left for collapse indicator */
+  margin-inline-start: 1em;
+  margin-inline-end: 0.25em;
+}
+.markdown-source-view.mod-cm6 .task-list-item-checkbox:hover {
+  border-color: var(--color-text-interactive-content-area-hover);
+  background-color: var(--color-text-interactive-content-area-hover);
+}
+/* Alternate incomplete states */
+input.task-list-item-checkbox[data-task="/"]:checked,
+input.task-list-item-checkbox[data-task="<"]:checked,
+li[data-task="/"]>input:checked,
+li[data-task="/"]>p>input:checked,
+li[data-task="<"]>input:checked,
+li[data-task="<"]>p>input:checked {
+  background-image: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+input[data-task="/"]:checked:after,
+input[data-task="<"]:checked:after,
+li[data-task="/"]>input:checked:after,
+li[data-task="/"]>p>input:checked:after,
+li[data-task="<"]>input:checked:after,
+li[data-task="<"]>p>input:checked:after {
+  content: "";
+  top: -1px;
+  left: -1px;
+  position: absolute;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  display: block;
+  background-color: var(--color-text-interactive-content-area);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+}
+input[data-task="/"]:checked:after,
+li[data-task="/"]>input:checked:after,
+li[data-task="/"]>p>input:checked:after {
+  -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="%23000000"><polyline points="12,-12 48,-12 48,36 12,36" transform="rotate(45) translate(5,-12)"></polyline></g></g></svg>');
+}
+input[data-task="<"]:checked:after,
+li[data-task="<"]>input:checked:after,
+li[data-task="<"]>p>input:checked:after {
+  -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="%23000000"><polyline points="15,4.5 6,12 15,19.5 16.75,17.5 10,12 16.75,6.5"></polyline></g></g></svg>');
+}
+/* Complete states */
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="-"],
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task=">"] {
+  text-decoration: var(--checklist-done-decoration);
+  color: var(--checklist-done-color);
+}
+input[data-task="x"]:checked,
+li[data-task="x"]>input:checked,
+li[data-task="x"]>p>input:checked,
+input[data-task="X"]:checked,
+li[data-task="X"]>input:checked,
+li[data-task="X"]>p>input:checked,
+input.task-list-item-checkbox[data-task=">"]:checked,
+li[data-task=">"]>input:checked,
+li[data-task=">"]>p>input:checked,
+input.task-list-item-checkbox[data-task="-"]:checked,
+li[data-task="-"]>input:checked,
+li[data-task="-"]>p>input:checked {
+  background-image: none;
+  border-color: var(--color-text-interactive-content-area);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-text-interactive-content-area);
+  color: white;
+}
+input[data-task='x']:checked:after,
+li[data-task="x"]>input:checked:after,
+li[data-task="x"]>p>input:checked:after,
+input[data-task='x']:checked:after,
+li[data-task="x"]>input:checked:after,
+li[data-task="x"]>p>input:checked:after,
+input[data-task="-"]:checked:after,
+li[data-task="-"]>input:checked:after,
+li[data-task="-"]>p>input:checked:after,
+input[data-task=">"]:checked:after,
+li[data-task=">"]>input:checked:after,
+li[data-task=">"]>p>input:checked:after {
+    content: "";
+    top: -1px;
+    left: -1px;
+    position: absolute;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    display: block;
+    background-color: var(--checkbox-marker-color);
+    -webkit-mask-repeat: no-repeat;
+}
+input[data-task='x']:checked:after,
+li[data-task="x"]>input:checked:after,
+li[data-task="x"]>p>input:checked:after {
+    -webkit-mask-position: 52% 52%;
+    -webkit-mask-size: 65%;
+    -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="12px" height="10px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-4.000000, -6.000000)" fill="%23000000"><path d="M8.1043257,14.0367999 L4.52468714,10.5420499 C4.32525014,10.3497722 4.32525014,10.0368095 4.52468714,9.8424863 L5.24777413,9.1439454 C5.44721114,8.95166768 5.77142411,8.95166768 5.97086112,9.1439454 L8.46638057,11.5903727 L14.0291389,6.1442083 C14.2285759,5.95193057 14.5527889,5.95193057 14.7522259,6.1442083 L15.4753129,6.84377194 C15.6747499,7.03604967 15.6747499,7.35003511 15.4753129,7.54129009 L8.82741268,14.0367999 C8.62797568,14.2290777 8.3037627,14.2290777 8.1043257,14.0367999"></path></g></g></svg>');
+}
+input[data-task="-"]:checked:after,
+li[data-task="-"]>input:checked:after,
+li[data-task="-"]>p>input:checked:after {
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: 100%;
+  -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="%23000000"><polyline points="4,10.5 20,10.5 20,13.5 4,13.5"></polyline></g></g></svg>');
+}
+input[data-task=">"]:checked:after,
+li[data-task=">"]>input:checked:after,
+li[data-task=">"]>p>input:checked:after {
+  -webkit-mask-position: 50% 50%;
+  -webkit-mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml; utf8, <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="%23000000"><polyline points="9,4.5 18,12 9,19.5 7.25,17.5 14,12 7.25,6.5"></polyline></g></g></svg>');
+}
+
+/********* Mobile *********/
+
+.is-mobile {
+  --file-margins: 0;
+}
+.is-mobile .workspace > .mod-root {
+    padding: 1rem;
+}
+.is-mobile .mod-root .workspace-tabs {
+    padding: 0;
+}
+.is-mobile .view-actions {
+  padding: 0;
+}
+.is-mobile .view-header-title-container {
+    height: auto;
+}
+.workspace-drawer {
+  top: 0.5rem;
+  bottom: 0.5rem;
+  background: none;
+}
+.workspace-drawer-inner {
+  background-color: var(--background-secondary);
+  background: var(--theme-gradient-bottomToTop);
+}
+.workspace-drawer.mod-left .workspace-drawer-inner {
+  border-top-right-radius: var(--radius-xl);
+  border-bottom-right-radius: var(--radius-xl);
+}
+.workspace-drawer.mod-right .workspace-drawer-inner {
+  border-top-left-radius: var(--radius-xl);
+  border-bottom-left-radius: var(--radius-xl);
+}
+.is-phone .modal-container {
+  padding: 0.5rem;
+}
+.is-phone .modal .modal-title {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  position: relative;
+}
+.is-phone .menu {
+  margin: 0 0.5rem;
+  padding: 0.5rem 0.5rem var(--safe-area-inset-bottom) 0.5rem;
+  width: calc(100% - var(--safe-area-inset-left) - var(--safe-area-inset-right) - 1rem);
+}
+.mobile-navbar {
+  background-color: transparent;
+}
+.mod-tappable,
+.workspace-drawer-active-tab-back-icon,
+.workspace-drawer-active-tab-icon {
+  align-items: center;
+  background-color: transparent;
+  border-radius: var(--clickable-icon-radius);
+  color: var(--color-text-interactive);
+  cursor: var(--cursor);
+  display: flex;
+  height: auto;
+  justify-content: center;
+  opacity: var(--icon-opacity);
+  padding: var(--size-2-2) var(--size-2-3);
+  transition: opacity 0.15s ease-in-out;
+}
+.mod-tappable:hover,
+.workspace-drawer-active-tab-back-icon:hover,
+.workspace-drawer-active-tab-icon:hover {
+  /* Use hover state for feedback if using a pointing device */
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+}
+
+.workspace-drawer-tab-option-item {
+  border-radius: var(--clickable-icon-radius);
+  padding: var(--size-2-2) var(--size-2-3);
+}
+.workspace-drawer-tab-option-item:hover {
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+}
+.workspace-drawer-tab-option-item:hover .workspace-drawer-tab-option-item-icon,
+.workspace-drawer-tab-option-item:hover .workspace-drawer-tab-option-item-title {
+  color: var(--color-text-interactive-hover);
+}
+
+/* These are separate elements, but I want them to look like one */
+.workspace-drawer-active-tab-icon,
+.workspace-drawer-active-tab-icon + .workspace-drawer-active-tab-title {
+  padding: var(--size-2-2) var(--size-2-3);
+  border-radius: var(--clickable-icon-radius);
+}
+/* Match height of .workspace-drawer-active-tab-icon */
+.workspace-drawer-active-tab-title {
+  height: calc(24px + var(--size-2-2) * 2);
+  vertical-align: baseline;
+  line-height: 24px;
+}
+.workspace-drawer-active-tab-icon + .workspace-drawer-active-tab-title {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  /* Hide gap */
+  margin-left: calc(-1 * var(--size-4-2));
+}
+.workspace-drawer-active-tab-icon:has(+ .workspace-drawer-active-tab-title) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.workspace-drawer-active-tab-icon + .workspace-drawer-active-tab-title:hover,
+.workspace-drawer-active-tab-icon:hover + .workspace-drawer-active-tab-title,
+.workspace-drawer-active-tab-icon:has(+ .workspace-drawer-active-tab-title:hover) {
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+}
+
+.pull-action.mod-activated {
+  background-color: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+.pull-down-action {
+  top: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  width: auto;
+  max-width: 30rem;
+  margin: var(--safe-area-inset-top) auto 0 auto;
+  padding: 0.5em 1em;
+  text-align: center;
+  border-radius: var(--radius-l);
+}
+.pull-action {
+  position: absolute;
+  background-color: var(--background-secondary);
+  z-index: var(--layer-popover);
+  color: var(--text-muted);
+  font-size: 90%;
+  transition: background-color ease-in-out 150ms;
+}
+
+.is-mobile .view-header-title-container {
+  padding-left: 0;
+}
+
+.is-phone {
+  /* I'm pretty sure this isn't used on mobile */
+  --divider-width: 0;
+  --metadata-divider-width: 0;
+}
+.is-phone .mod-root .workspace-tab-container {
+  /* Bottom margin the same as height of .mobile-navbar, to avoid overlap */
+  margin-bottom: calc(max(var(--size-4-2), var(--safe-area-inset-bottom)) + var(--size-4-2) + var(--size-2-2) * 4 + var(--icon-size));
+}
+
+.is-phone .modal.mod-sidebar-layout .modal-content > * {
+  padding: 1em calc(1em + var(--safe-area-inset-right)) 1em calc(1em + var(--safe-area-inset-left));
+}
+.is-phone .vertical-tab-header-group {
+    margin: 0 auto;
+    width: 100%;
+}
+.is-phone .modal.mod-settings .vertical-tab-nav-item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    background-color: var(--theme-color-settingsGroupBg);
+    padding: 0 0.75em;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+}
+.is-phone .modal.mod-settings .modal-title {
+  border-bottom: none;
+}
+.is-phone .modal.mod-settings .vertical-tab-content {
+  background-color: var(--theme-color-settingsGroupBg);
+  padding: var(--size-4-5) max(var(--size-4-5), var(--safe-area-inset-right)) 100px max(var(--size-4-5), var(--safe-area-inset-left));
+  border-radius: var(--radius-m);
+}
+
+/********* Messages *********/
+
+.mod-warning,
+p.mod-warning,
+.setting-message {
+  border-radius: var(--clickable-icon-radius);
+  font-size: var(--font-ui-small);
+  background: var(--theme-color-warningBg);
+  padding: 0.5em 1em;
+}
+.mod-warning:not(button) {
+  display: inline-block;
+  margin: 0.5em 0;
+  border: solid var(--text-error) 0.125em;
+}
+/* Collapse adjacent messages */
+p.mod-warning~p.mod-warning,
+p.setting-message~p.setting-message {
+  margin-bottom: 0;
+  padding-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: block;
+  border-top: none;
+}
+p.mod-warning:has(+ p.mod-warning,.setting-message),
+.setting-message:has(+ p.mod-warning,.setting-message) {
+  border-top-left-radius: var(--clickable-icon-radius);
+  border-top-right-radius: var(--clickable-icon-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: none;
+  margin-bottom: 0;
+  display: block;
+}
+
+/********* Close buttons *********/
+
+.mod-close,
+.modal-close-button,
+.document-search-close-button,
+.workspace-tab-header-inner-close-button,
+.slides-close-btn {
+  background-color: transparent;
+  border-radius: 1.5rem;
+  border: none;
+  color: var(--color-text-interactive);
+  /* Above .modal-title */
+  z-index: 2;
+  width: 1.5rem;
+  height: auto;
+}
+.workspace-tab-header-inner-close-button .svg-icon {
+  stroke: var(--color-text-interactive);
+}
+
+.mod-close:hover,
+.modal-close-button:hover,
+.document-search-close-button:hover,
+.workspace-tab-header-inner-close-button:hover,
+.workspace-tab-header.is-active .workspace-tab-header-inner-close-button:hover,
+.mod-sync-history .modal-close-button:hover,
+.mod-settings .modal-close-button:hover,
+.workspace-tab-header-inner-close-button:hover,
+.slides-close-btn:hover {
+  color: var(--color-text-interactive);
+  background-color: var(--theme-color-navigationButtonBgHover);
+}
+.workspace-tab-header:hover .workspace-tab-header-inner-close-button .svg-icon {
+  stroke: var(--color-text-interactive-hover);
+}
+
+/* close buttons that use a text cross instead of an SVG */
+.document-search-close-button,
+.modal-close-button,
+.is-mobile .document-search .document-search-close-button,
+.is-mobile .document-replace .document-search-close-button {
+  padding: var(--size-2-1);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-content: center;
+  --icon-size: var(--icon-s);
+  --icon-stroke: var(--icon-s-stroke-width);
+  text-align: center;
+  justify-content: center;
+  line-height: 20px;
+}
+.document-search-close-button:before,
+.modal-close-button:before {
+  /* This uses a text cross instead of an SVG. Hack for visual alignment. */
+  margin-top: -1px;
+}
+
+/* Tab close button on left, macOS standard */
+.mod-macos .workspace .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+  position: static;
+  order: 0;
+}
+.mod-macos .workspace .mod-root .workspace-tab-header-inner-icon,
+.mod-macos .workspace .mod-root .workspace-tab-header-inner-title {
+  order: 1;
+}
+.mod-macos .modal-close-button {
+  left: var(--size-2-3);
+  right: auto;
+}
+.mod-macos .mod-community-modal .modal-sidebar .setting-item:first-child {
+  margin-left: auto;
+}
+.mod-macos .modal-sidebar .community-modal-controls {
+  padding-left: var(--size-4-5);
+}
+.mod-macos .multi-select-pill {
+  padding-left: 0.25em;
+}
+.mod-macos .multi-select-pill .multi-select-pill-remove-button {
+  order: 0;
+}
+.mod-macos .multi-select-pill .multi-select-pill-content {
+  order: 1;
+  margin: 0;
+}
+
+/********** Navigation buttons **********/
+/* Styled similarly to close button */
+
+.modal-setting-back-button-icon,
+.mod-root .workspace-tab-header-status-icon {
+  color: var(--color-text-interactive);
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  /* Above .modal-title */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.modal-setting-back-button-icon:hover,
+.mod-root .workspace-tab-header-status-icon:hover {
+  color: var(--color-text-interactive);
+  background-color: var(--theme-color-navigationButtonBgHover);
+}
+.mod-root .workspace-tab-header-status-icon .svg-icon {
+  width: 80%
+}
+
+/********* Lightweight Buttons *********/
+
+.markdown-source-view.mod-cm6 .code-block-flair,
+.clickable-icon,
+.side-dock-actions .side-dock-ribbon-action.clickable-icon,
+.metadata-property-icon {
+  align-items: center;
+  background-color: transparent;
+  border-radius: var(--clickable-icon-radius);
+  color: var(--color-text-interactive);
+  cursor: var(--cursor);
+  display: flex;
+  height: auto;
+  justify-content: center;
+  opacity: var(--icon-opacity);
+  padding: var(--size-2-2) var(--size-2-3);
+  transition: opacity 0.15s ease-in-out;
+}
+.markdown-source-view.mod-cm6 .code-block-flair:hover,
+.clickable-icon:hover,
+.side-dock-actions .side-dock-ribbon-action.clickable-icon:hover,
+.metadata-property-icon:hover {
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+}
+.clickable-icon.is-active {
+  opacity: var(--icon-opacity-hover);
+  color: var(--color-text-interactive-active);
+  background-color: var(--theme-color-interactiveActive);
+}
+.clickable-icon.is-active:hover {
+  background-color: var(--background-modifier-hover);
+  color: var(--color-text-interactive-hover);
+}
+
+/********** Lightweight form controls **********/
+/* Form controls that are rendered as text until they have focus */
+
+.metadata-property .metadata-property-key input,
+.metadata-property .metadata-property-value {
+  border: none;
+  border-radius: var(--input-radius);
+  box-shadow: none;
+  display: flex;
+  background: transparent;
+  height: 100%;
+  padding: 0 0.5em;
+}
+.metadata-property .metadata-property-value input {
+  box-shadow: none;
+}
+.metadata-property .metadata-property-key input:hover,
+.metadata-property .metadata-property-value:hover {
+  background: var(--background-input);
+}
+.metadata-property .metadata-property-key input:focus,
+.metadata-property .metadata-property-value:focus-within {
+  border: none;
+  background: var(--background-input);
+  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-focus);
+  color: var(--text-normal);
+}
+
+/********* Notices *********/
+
+.notice-container {
+  padding: 0;
+  right: 1rem;
+  top: 1rem;
+}
+.is-mobile .notice-container {
+  padding: 0.5em 0.5em 2em 0.5em;
+  top: 0;
+  left: auto;
+  right: 0;
+}
+.is-phone .notice-container {
+  padding: 0.5em 0.5em 2em 0.5em;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.notice,
+.is-phone .notice  {
+  border-radius: 1em;
+  background-color: var(--background-modifier-message);
+  color: var(--theme-color-notice);
+  box-shadow: var(--shadow-s);
+  padding: 1em 1.5em;
+  margin: 0 0 1rem 0;
+}
+.is-phone .notice {
+  text-align: center;
+  max-width: none;
+}
+
+/********* Workspace *********/
+
+.workspace {
+  background-color: var(--background-secondary);
+  background: var(--theme-gradient-bottomToTop);
+}
+.workspace-tabs .workspace-leaf {
+  background: transparent;
+}
+.workspace-split.mod-root {
+  background: transparent;
+  background: var(--theme-gradient-topToBottom);
+  padding-bottom: 1.5rem;
+  padding: 0.5em 0.5em 2em 0.5em;
+}
+.sidebar-toggle-button,
+.workspace-tabs.mod-top,
+.is-focused .sidebar-toggle-button,
+.is-focused .workspace-tabs.mod-top {
+  --tab-container-background: transparent;
+}
+.workspace-tab-header {
+  color: var(--theme-color-textTabInactive);
+  background-color: var(--tab-background-inactive);
+}
+.workspace-tab-header.is-active {
+  color: var(--tab-text-color-active);
+  background-color: var(--tab-background-active);
+  box-shadow: var(--theme-shadow-input);
+}
+
+/* Drag */
+.workspace-drop-overlay:before {
+  animation: 0.5s 1 alternate fadein;
+  background-color: var(--color-theme-dragTarget);
+  border-radius: var(--radius-m);
+  opacity: 1;
+}
+.workspace-fake-target-overlay {
+  background: transparent;
+}
+
+/* Tabs */
+.workspace-tab-header {
+  border-radius: var(--tab-radius-active) var(--tab-radius-active) 0 0;
+}
+.workspace-tab-header:not(.is-active):hover .workspace-tab-header-inner {
+  color: var(--icon-color-focused);
+  background-color: var(--theme-color-tabBgInactiveHover);
+}
+.workspace-tab-header-inner:hover .workspace-tab-header-inner-icon {
+  color: var(--icon-color-focused);
+  opacity: var(--icon-opacity);
+}
+.workspace-tab-header-container-inner {
+  gap: 0.25em;
+}
+
+/* Stacked tabs */
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header {
+  background-color: var(--tab-background-inactive);;
+  box-shadow: var(--theme-shadow-input);
+}
+.workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
+  background-color: var(--background-primary);
+}
+
+/* Empty state */
+.empty-state-container {
+  background: var(--theme-color-emptyStateBg);
+  border-radius: var(--radius-m);
+  max-height: none;
+  max-width: none;
+  padding: 1em 1.5em 1.5em 1.5em;
+}
+.empty-state-action-list,
+.is-mobile .empty-state-action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-top: 0;
+}
+.empty-state-action-list .empty-state-action {
+  padding: 0 1.5em;
+}
+.empty-state-action-list .empty-state-action.mod-close {
+  display: none;
+}
+
+/* Main area */
+.mod-root .workspace-tab-header-container-inner {
+  /* Define spacing on tabs to fit with radius */
+  padding: 0.5em calc(var(--tab-radius) * 2) 0 calc(var(--tab-radius) * 2);
+}
+.workspace .mod-root .workspace-tab-header {
+  padding: 0;
+}
+.mod-root .workspace-tab-header-inner {
+  padding: 0.25em 0.5em 0.25em 0.5em;
+  border-radius: var(--tab-radius-active) var(--tab-radius-active) 0 0;
+}
+.mod-root .workspace-tab-header.is-active .workspace-tab-header-inner {
+  padding-left: 0.25em;
+}
+.workspace .mod-root .workspace-tab-header-inner::after {
+  /* Not sure what this is for */
+  background: transparent;
+}
+.mod-root .workspace-tabs {
+  padding: 0 0.5em 0 0.5em;
+  border-radius: 0;
+}
+.mod-root .workspace-tabs .workspace-tab-container {
+  background-color: var(--background-primary);
+  border-radius: var(--tab-radius);
+  box-shadow: var(--theme-shadow-input);
+}
+
+/* Ribbon styling */
+
+.workspace-ribbon {
+  padding-left: 0;
+}
+
+.side-dock-actions {
+  border-top-right-radius: var(--radius-m);
+  border-bottom-right-radius: var(--radius-m);
+  padding: var(--size-2-3);
+  background: var(--background-side-dock-actions)
+}
+
+.side-dock-actions .side-dock-ribbon-action {
+  margin: 0;
+}
+
+/* Pane styling */
+.pane-empty {
+  color: var(--empty-pane-color);
+}
+
+/* Sidebars, left and right */
+.mod-left-split .workspace-tab-header-container,
+.mod-right-split .workspace-tab-header-container {
+  justify-content: center;
+}
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  background: var(--tab-background-inactive);
+}
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  border-radius: var(--radius-s);
+  gap: 0;
+  padding: 0;
+}
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  border-radius: 0;
+}
+.is-focused .mod-active .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--text-normal);
+}
+.is-focused .mod-left-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon,
+.is-focused .mod-right-split .workspace-tab-header.is-active .workspace-tab-header-inner-icon {
+  color: var(--icon-color-focused);
+}
+.mod-left-split .workspace-tab-header.has-active-menu,
+.mod-right-split .workspace-tab-header.has-active-menu,
+.mod-left-split .workspace-tab-header.is-active,
+.mod-right-split .workspace-tab-header.is-active {
+  background: var(--background-switcher-active);
+}
+.mod-left-split .workspace-tab-header-spacer,
+.mod-right-split .workspace-tab-header-spacer {
+  display: none;
+}
+.mod-left-split .workspace-tab-header-inner,
+.mod-right-split .workspace-tab-header-inner {
+  border-radius: 0;
+}
+
+/* Sidebar toggle buttons */
+.sidebar-toggle-button.mod-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: var(--ribbon-width);
+  justify-content: center;
+}
+
+.sidebar-toggle-button.mod-left .clickable-icon,
+.sidebar-toggle-button.mod-right .clickable-icon {
+  color: var(--color-text-interactive);
+}
+
+.sidebar-toggle-button.mod-left .clickable-icon:hover,
+.sidebar-toggle-button.mod-right .clickable-icon:hover {
+  color: var(--color-text-interactive-hover);
+}
+
+.workspace-tab-header-tab-list {
+  /* Tab list control makes space for sidebar control when sidebar is closed */
+  margin-right: calc(var(--icon-size) * 2);
+}
+
+.is-right-sidedock-open .workspace-tab-header-tab-list {
+  margin-right: 0;
+}
+
+.mod-right-split .workspace-tab-header-container {
+  padding-right: 2.5rem;
+}
+
+/* Status bar */
+.status-bar {
+  border: none;
+  border-top-left-radius: var(--radius-m);
+  border-top-right-radius: var(--radius-m);
+  gap: 0.5rem;
+  padding: 0 0.5rem 0.25em 0;
+  right: auto;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 2em;
+}
+.status-bar-item {
+  line-height: 1rem;
+  padding: 0.25em 0.5em;
+  width: auto;
+  white-space: nowrap;
+  gap: 0.25em;
+  height: 100%
+}
+.status-bar-item:has(.status-bar-item) {
+  padding: 0;
+}
+.status-bar-item.mod-clickable {
+  color: var(--color-text-interactive);
+}
+.status-bar-item.mod-clickable:hover {
+  color: var(--color-text-interactive-hover);
+
+}
+.theme-picker-color-scheme-icon > svg {
+  fill: var(--color-text-interactive);
+}
+.theme-picker-color-scheme-icon:hover > svg {
+  fill: var(--color-text-interactive-hover);
+}
+.status-bar-item:hover .sync-status-icon.mod-working {
+  color: var(--text-normal);
+}
+.status-bar-item.plugin-editor-status, .status-bar-item.plugin-sync {
+  padding: 0.25em 0.5em;
+}
+
+/********* Content references (search results, incoming/outgoing links, etc.) *********/
+
+.search-result-file-matches {
+  background: none;
+  box-shadow: none;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+  margin: 0;
+}
+.search-result-file-match,
+.sync-history-list-item {
+  background: var(--theme-color-contentItemBg);
+  border: none;
+  border-radius: var(--radius-s);
+  box-shadow: none;
+  color: var(--nav-item-color);
+  font-weight: var(--nav-item-weight);
+  padding: 0.5em 1em;
+}
+.search-result-file-match:hover,
+.sync-history-list-item:hover {
+  background: var(--theme-color-contentItemBgHover);
+  cursor: pointer;
+  font-weight: var(--nav-item-weight-hover);
+}
+.search-result-hover-button:hover {
+  color: var(--color-text-interactive-hover);
+}
+.sync-history-list-item:has(.sync-history-list-item-header.is-active) {
+  background: var(--theme-color-contentItemBgActive);
+}
+.search-result-file-matched-text {
+  font-weight: bold;
+}
+.search-result:not(.is-collapsed) .search-result-file-title {
+  color: var(--color-text-interactive);
+}
+
+/********* Trees *********/
+
+.tree-item-self {
+  gap: 0.5em;
+}
+.tree-item-icon,
+.tree-item-self .tree-item-icon {
+  /* Icons that represent an object have the same colour as the related text */
+  color: inherit;
+  margin: 0;
+  position: relative;
+}
+
+/********* Prompt *********/
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.prompt-input-container,
+.is-phone .prompt-input-container {
+  border-bottom: none;
+  background: var(--background-secondary);
+}
+.prompt {
+  background-color: var(--background-prompt);
+}
+input.prompt-input[type='text'] {
+  background: var(--background-secondary);
+  border-bottom: none;
+  box-shadow: none;
+}
+input.prompt-input[type=text]:focus {
+  background: var(--background-secondary);
+  border-bottom: none;
+  box-shadow: none;
+}
+input[type='text'].prompt-input::placeholder {
+  color: var(--theme-color-base);
+}
+.prompt-instructions {
+  background: var(--background-secondary);
+  border-top: 0;
+}
+
+/********* Suggestions (Search, File Recovery, Slash commands) *********/
+
+.suggestion-container,
+.suggestion-container.mod-search-suggestion  {
+  display: block;
+  background-color: var(--theme-color-suggestionBg);
+  border: none;
+}
+.suggestion-container.mod-search-suggestion .suggestion {
+  background: transparent;
+}
+.suggestion-title.list-item-part {
+  color: var(--text-normal);
+}
+.suggestion-aux {
+  gap: 0.25em;
+}
+.suggestion-item.is-selected {
+  background-color: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover);
+}
+.suggestion-item.is-selected .suggestion-flair {
+  color: var(--nav-item-color-active);
+}
+
+/********* Hotkeys *********/
+
+.suggestion-hotkey,
+.setting-hotkey {
+  background: transparent;
+  border: solid 1px var(--theme-color-hotkey);
+  color: var(--theme-color-hotkey);
+}
+.suggestion-item.is-selected .suggestion-hotkey {
+  border-color: var(--theme-color-textSelected);
+  color: var(--theme-color-textSelected);
+}
+.setting-hotkey.has-conflict {
+  background: transparent;
+  border: solid 1px var(--background-modifier-error);
+  color: var(--background-modifier-error);
+}
+
+/********* Action lists *********/
+
+.vertical-tab-header-group-title {
+  color: var(--text-normal);
+}
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item {
+  color: var(--color-text-interactive);
+}
+
+/********* Standardised Controls *********/
+
+/* Text fields */
+.search-input-container input[type='search'],
+input.document-search-input,
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='text'],
+textarea {
+  box-shadow: 0 0 0 var(--input-border-width) var(--theme-color-base);
+  border: none;
+  background: var(--background-input);
+}
+
+.search-input-container input[type='search']:active,
+.search-input-container input[type='search']:focus-visible,
+.search-input-container input[type='search']:focus,
+input.document-search-input:active,
+input.document-search-input:focus-visible,
+input.document-search-input:focus,
+input[type='email']:active,
+input[type='email']:focus-visible,
+input[type='email']:focus,
+input[type='number']:active,
+input[type='number']:focus-visible,
+input[type='number']:focus,
+input[type='password']:active,
+input[type='password']:focus-visible,
+input[type='password']:focus,
+input[type='search']:active,
+input[type='search']:focus-visible,
+input[type='search']:focus,
+input[type='text']:active,
+input[type='text']:focus-visible,
+input[type='text']:focus,
+textarea:active,
+textarea:focus-visible,
+textarea:focus {
+  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-focus);
+}
+
+.search-input-container input[type='search']:hover,
+input.document-search-input:hover,
+input[type='email']:hover,
+input[type='number']:hover,
+input[type='password']:hover,
+input[type='search']:hover,
+input[type='text']:hover,
+textarea:hover {
+  box-shadow: 0 0 0 var(--input-border-width) var(--background-modifier-border-focus);
+}
+textarea {
+  padding: 1em;
+}
+.search-input-container input::placeholder,
+input.document-search-input::placeholder,
+input[type='email']::placeholder,
+input[type='number']::placeholder,
+input[type='password']::placeholder,
+input[type='search']::placeholder,
+input[type='text']::placeholder,
+textarea::placeholder {
+  color: var(--theme-color-inputPlaceholder);
+}
+/* No matches state */
+input.document-search-input.mod-no-match,
+input.document-replace-input.mod-no-match {
+  background-color: color-mix(in srgb, var(--background-input), var(--background-modifier-error) 50%);
+}
+
+/* Buttons - regular */
+button:not(.clickable-icon),
+button:not(.clickable-icon).mod-cta,
+.sync-history-load-more-button,
+.empty-state-action,
+.is-mobile .document-search .document-search-button,
+.is-mobile .document-replace .document-search-button {
+  background: var(--theme-color-controlBg);
+  border: none;
+  border-radius: var(--button-radius);
+  box-shadow: var(--theme-shadow-control);
+  color: var(--theme-color-controlText);
+  padding: 0.25em 0.5em;
+  min-height: var(--input-height);
+  height: auto;
+}
+button:not(.clickable-icon):hover,
+button:not(.clickable-icon).mod-cta:hover,
+.sync-history-load-more-button:hover,
+.empty-state-action:hover,
+.is-mobile .document-search .document-search-button:hover,
+.is-mobile .document-replace .document-search-button:hover {
+  border: none;
+  background: var(--theme-color-controlBgHover);
+  color: var(--theme-color-controlTextHover);
+}
+button:not(.clickable-icon):focus,
+button:not(.clickable-icon).mod-cta:focus,
+.sync-history-load-more-button:focus ,
+.empty-state-action:focus,
+.is-mobile .document-search .document-search-button:focus,
+.is-mobile .document-replace .document-search-button:focus {
+  box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+}
+
+/* Buttons - regular but small */
+button.search-result-file-match-replace-button {
+  min-height: auto;
+}
+
+/* Buttons - lower visual weight */
+.search-result-file-match-destination-file {
+  border: none;
+  box-shadow: var(--theme-shadow-control);
+  background-color: var(--theme-color-controlBgLowWeight);
+}
+.search-result-file-match:hover .search-result-file-match-destination-file:hover {
+  border: none;
+  background: var(--theme-color-controlBgHover);
+  color: var(--theme-color-controlTextHover);
+}
+.search-result-file-match-destination-file:focus {
+    box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+    outline: none;
+}
+.search-result-file-match:hover .search-result-file-match-destination-file:hover .search-result-file-match-destination-file-icon {
+  color: var(--theme-color-controlTextHover);
+}
+
+/* Selects – regular */
+select,
+.setting-item-control select {
+  border: none;
+  box-shadow: var(--theme-shadow-control);
+  background-color: var(--theme-color-controlBg);
+}
+select:hover,
+.setting-item-control select:hover {
+  border: none;
+  background: var(--theme-color-controlBgHover);
+  color: var(--theme-color-controlTextHover);
+}
+select:focus,
+.dropdown:focus {
+    box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+    outline: none;
+}
+
+/* Selects – lower visual weight */
+.search-results-info .dropdown {
+  border: none;
+  box-shadow: var(--theme-shadow-control);
+  background-color: var(--theme-color-controlBgLowWeight);
+}
+.search-results-info .dropdown:hover {
+  border: none;
+  background: var(--theme-color-controlBgHover);
+  color: var(--theme-color-controlTextHover);
+}
+.search-results-info .dropdown:focus {
+    box-shadow: 0 0 0 3px var(--background-modifier-border-focus);
+    outline: none;
+}
+
+
+/* Multi-select pill */
+.multi-select-container,
+.metadata-property .multi-select-container {
+  padding: 0.25em;
+}
+.multi-select-pill {
+  padding: var(--pill-padding-y) var(--pill-padding-x);
+}
+.multi-select-pill-remove-button {
+  margin: 0;
+  border-radius: 100%;
+}
+.multi-select-pill-remove-button:hover {
+  background: var(--pill-background-remove-hover);
+}
+
+/* Toolbars */
+.canvas-controls,
+.graph-controls,
+.graph-controls.is-close,
+.graph-controls:not(.is-close),
+.canvas-card-menu,
+.canvas-menu,
+.canvas-submenu {
+  background: var(--controls-container-background);
+  border: none;
+  padding: 0.25rem;
+  gap: 0;
+  box-shadow: var(--theme-shadow-input);
+  border-radius: 0.5rem;
+}
+.canvas-control-item,
+.graph-controls-button,
+.canvas-card-menu .canvas-card-menu-button {
+  --icon-size: var(--icon-s);
+  --icon-stroke: var(--icon-s-stroke-width);
+  border-radius: var(--clickable-icon-radius);
+  color: var(--color-text-interactive);
+  opacity: var(--icon-opacity);
+  background-color: transparent;
+  border: none;
+}
+.canvas-control-item:hover,
+.graph-controls-button:not(.mod-close):hover,
+.canvas-card-menu .canvas-card-menu-button:hover {
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+}
+
+/* Collapsible controls */
+.metadata-properties-heading,
+.embedded-backlinks .backlink-pane .tree-item-self,
+.graph-controls .mod-collapsible,
+.mod-collapsible,
+.search-result-file-title {
+  align-items: flex-start;
+  border-radius: var(--radius-s);
+  color: var(--text-faint);
+  font-size: var(--nav-item-size);
+  font-weight: var(--font-medium);
+  gap: 0;
+  margin: 0;
+  padding: 0.25em 0.5em;
+  line-height: var(--line-height-tight);
+  display: flex;
+}
+.metadata-properties-heading:hover,
+.embedded-backlinks .backlink-pane .tree-item-self:hover,
+.graph-controls .mod-collapsible:hover,
+.mod-collapsible:hover,
+.search-result-file-title:hover {
+  color: var(--nav-item-color-hover);
+  background-color: var(--nav-item-background-hover);
+  font-weight: var(--font-medium);
+}
+.metadata-properties-heading .collapse-indicator,
+.embedded-backlinks .backlink-pane .tree-item-self .collapse-icon,
+.graph-controls .mod-collapsible .collapse-icon,
+.tree-item-self .tree-item-icon.collapse-icon {
+  color: var(--color-text-interactive);
+  display: flex;
+  left: inherit;
+  opacity: var(--icon-opacity);
+  padding: 0;
+  position: relative;
+  width: var(--size-4-4);
+  margin: 0;
+  align-items: center;
+  justify-content: flex-start;
+}
+.metadata-properties-heading:hover .collapse-indicator svg.svg-icon,
+.embedded-backlinks .backlink-pane .tree-item-self:hover .collapse-icon svg.svg-icon,
+.graph-controls .mod-collapsible:hover .collapse-icon svg.svg-icon,
+.mod-collapsible:hover .collapse-icon svg.svg-icon,
+.search-result-file-title:hover .collapse-icon svg.svg-icon,
+.tree-item-self:hover .tree-item-icon.collapse-icon svg.svg-icon,
+.tree-item-self:hover .menu-item-icon svg.svg-icon {
+  color: var(--color-text-interactive-hover);
+}
+.backlink-pane > .tree-item-self .collapse-icon,
+.outgoing-link-pane > .tree-item-self .collapse-icon {
+  display: block;
+  margin-left: 0;
+  position: relative;
+}
+.metadata-properties-heading .collapse-indicator svg,
+.embedded-backlinks .backlink-pane .tree-item-self .tree-item-icon svg,
+.graph-controls .mod-collapsible .collapse-icon svg {
+  color: var(--color-text-interactive);
+}
+.metadata-content,
+.embedded-backlinks .backlink-pane .search-result-container,
+.graph-control-section .tree-item-children {
+  margin: 0 1em 1em 1em;
+  font-size: var(--font-ui-small);
+}
+
+/********* Item lists *********/
+body:not(.is-grabbing) .tree-item-self.is-clickable:hover,
+.horizontal-tab-nav-item:hover,
+.vertical-tab-nav-item:hover {
+  color: var(--nav-item-color-hover);
+  background-color: var(--nav-item-background-hover);
+  font-weight: var(--nav-item-weight-hover);
+}
+.horizontal-tab-nav-item.is-active,
+.vertical-tab-nav-item.is-active,
+.nav-file-title.is-active,
+.nav-folder-title.is-active {
+  background-color: var(--interactive-accent);
+  color: var(--nav-item-color-active);
+}
+.nav-folder.is-being-dragged-over {
+  animation: 0.5s 1 alternate fadein;
+  border-radius: var(--radius-s);
+  border: solid 0.125rem var(--color-theme-dragTarget);
+  background-color: var(--color-theme-dragTargetBg);
+}
+body:not(.is-grabbing) .tree-item.nav-file .tree-item-self.is-active:hover,
+.horizontal-tab-nav-item.is-active:hover,
+.vertical-tab-nav-item.is-active:hover,
+.nav-file-title.is-active:hover,
+.nav-folder-title.is-active:hover {
+  background-color: var(--interactive-accent);
+  color: var(--nav-item-color-active);
+}
+.nav-folder-title {
+  font-weight: var(--font-medium);
+}
+.nav-file-title,
+.nav-folder-title {
+  padding: 0;
+}
+.tree-item-inner {
+  padding: var(--nav-item-padding);
+}
+
+/* UI Checkboxes */
+.checkbox-container {
+  background-color: var(--background-input);
+}
+.checkbox-container.is-enabled {
+    background-color: var(--interactive-accent);
+}
+input[type=checkbox]:checked:after {
+  /* Scale check mark with container in slides */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/********** Tooltips **********/
+
+.tooltip {
+  color: var(--theme-color-notice);
+  background-color: var(--theme-color-noticeBg);
+  padding: 0.5em 1em;
+}
+
+/********** Remote items **********/
+
+.community-modal-search-results-wrapper,
+.vault-list,
+.sync-file-tree-container {
+  background: var(--theme-gradient-topToBottom);
+  border: 0;
+  padding: 1.5em;
+  gap: 1.5em;
+}
+.is-phone .community-modal-search-results-wrapper {
+  padding: 1em;
+  gap: 1em;
+}
+.vault-list-item,
+.community-item,
+.sync-file-tree-container>.list-item {
+  background: var(--theme-color-communityItemBg);
+  border-radius: var(--radius-m);
+  border: none;
+  box-shadow: var(--shadow-l);
+  cursor: var(--cursor);
+  padding: var(--size-4-3);
+  position: relative;
+}
+.is-phone .vault-list-item,
+.is-phone .community-item {
+  border-radius: var(--radius-m);
+  padding: 0.5em 1em;
+}
+
+.sync-file-tree-container>.list-item:hover,
+.community-item:hover {
+  background: var(--theme-color-communityItemBgHover);
+  color: var(--nav-item-color-hover);
+  font-weight: var(--nav-item-weight-hover);
+}
+.community-modal-search-results {
+  padding: 0;
+  gap: 1.5em;
+}
+.is-phone .community-modal-search-results {
+  padding: 0;
+  gap: 1em;
+}
+
+/********** Modals **********/
+
+/* Default modal */
+
+.modal {
+  padding: 0;
+  overflow: hidden;
+}
+.modal-title {
+  /* Space for modal-close-button in line with title */
+  padding: 0.5em calc(var(--size-2-3) + 2rem);
+  /* Align with top position for modal-close-button */
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--font-ui-medium);
+  line-height: 1.4em;
+}
+.modal-bg,
+.modal,
+.prompt,
+.document-search-container {
+  animation: 0.5s 1 alternate fadein;
+}
+.modal-content {
+  margin: 0 0;
+  /* Allow space for input borders */
+  padding: var(--input-border-width) 2em;
+  overflow: auto;
+}
+.modal-content p {
+  margin: 0 0 0.5em 0;
+}
+.modal-content p:last-child {
+  margin-bottom: 0;
+}
+.modal-content > hr {
+  /* Used in the Manage Workspaces modal, but there's currently no way to target that. */
+  border: none;
+  margin: 1em 0;
+}
+.modal-button-container {
+  margin-top: 0;
+  padding: 1em 2rem;
+}
+
+.modal-content:has(.modal-button-container),
+.modal-content:has(.button-container) {
+  /* Sometimes the .modal-button-container is nested inside the .modal-content */
+  overflow: scroll;
+  background-color: var(--theme-color-modalContentBg);
+  padding: 1em 2em;
+}
+.modal-content .modal-button-container {
+  padding: 0;
+}
+
+/* Modals with sidebar layout */
+
+.mod-sidebar-layout .modal-content {
+  padding: 0;
+  margin: 0;
+}
+.modal-sidebar,
+.modal.mod-settings .vertical-tab-header {
+  border-right: none;
+  padding: 2.5em 1em 1em 1.5em;
+  margin: 0;
+  background: var(--theme-gradient-topToBottom);
+  color: var(--color-text-interactive);
+  height: 100%;
+  box-shadow: var(--shadow-s);
+  z-index: 1;
+}
+
+/* Help modal */
+.modal.mod-canvas-help .modal-content {
+  height: 100%;
+  overflow: scroll;
+  padding-right: 1em;
+}
+
+/* Community modal */
+.mod-community-modal .modal-sidebar {
+  padding: 0;
+}
+.mod-community-modal .community-modal-controls {
+  background: var(--theme-color-settingsBg);
+  padding: 2.5em 1em 1em 0;
+  box-shadow: var(--shadow-s);
+  z-index: 1;
+}
+.mod-community-modal .modal-close-button {
+  z-index: 2;
+}
+.mod-community-modal .community-modal-controls .setting-item {
+  padding: 0;
+  margin-bottom: 0.5em;
+}
+.mod-community-modal .community-modal-controls .setting-item:first-child {
+  /* Filter control */
+  max-width: var(--modal-community-sidebar-width);
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+  float: right;
+}
+.mod-community-modal .community-modal-controls .setting-item:first-child .setting-item-control {
+  margin: 0;
+}
+.mod-community-modal .modal-content:has(.community-modal-details) .community-modal-controls .setting-item:first-child {
+  float: none;
+}
+.community-modal-search-summary {
+  margin: 0;
+  padding: 0;
+}
+.community-modal-details {
+  border: none;
+}
+.community-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2-1);
+}
+.community-item.is-selected,
+.community-item.is-selected:hover {
+  background: var(--theme-color-communityItemBgSelected)
+}
+.community-item.mod-active {
+  background: var(--theme-color-communityItemBgActive)
+}
+.community-item.is-selected .flair.mod-pop,
+.community-item.is-selected:hover .flair.mod-pop,
+.community-item.mod-active .flair.mod-pop,
+.community-item.mod-active:hover .flair.mod-pop {
+  display: none;
+}
+.community-item.is-selected,
+.community-item.is-selected:hover,
+.community-item.is-selected .community-item-author,
+.community-item.is-selected:hover .community-item-author,
+.community-item.is-selected .community-item-repo,
+.community-item.is-selected:hover .community-item-repo,
+.community-item.is-selected .community-item-downloads,
+.community-item.is-selected:hover .community-item-downloads,
+.community-item.is-selected .community-item-updated,
+.community-item.is-selected:hover .community-item-updated {
+  color: var(--text-normal);
+}
+.community-item.mod-active .community-item-author,
+.community-item.mod-active:hover .community-item-author,
+.community-item.mod-active .community-item-repo,
+.community-item.mod-active:hover .community-item-repo,
+.community-item.mod-active .community-item-downloads,
+.community-item.mod-active:hover .community-item-downloads,
+.community-item.mod-active .community-item-updated,
+.community-item.mod-active:hover .community-item-updated {
+    color: var(--text-on-accent);
+    opacity: 0.8;
+}
+
+/* Settings modal */
+.modal.mod-settings .vertical-tab-header-group {
+  border-right: none;
+  padding: 0 0 1.5em 0;
+}
+.modal.mod-settings .vertical-tab-header-group-title {
+  padding: 0 0.5em 0.5em 0.5em;
+}
+.mod-settings .vertical-tab-content {
+  background: var(--theme-color-settingsBg);
+  padding: 2em;
+}
+.modal-setting-nav-bar {
+  border: none;
+  padding: 0.5em 0 0 0;
+}
+.setting-item {
+  /* Also used when editing bookmarks */
+  border-top: none;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
+
+/* Font settings modal */
+.setting-font-list + .setting-item {
+  border: none;
+}
+
+/* Document search */
+.document-search-container,
+.mod-active .document-search-container,
+.is-mobile .document-search-container {
+  background: var(--background-secondary);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-s);
+  margin: 0 auto;
+  padding: 0.5em;
+}
+.document-search,
+.document-replace {
+  padding: 0;
+}
+.document-search-button {
+  border: none;
+  color: var(--color-text-interactive);
+}
+.document-search-close-button,
+.is-mobile .document-search .document-search-close-button,
+.is-mobile .document-replace .document-search-close-button {
+  top: calc(50% - 0.5em);
+}
+
+/* Debug modal */
+.modal-content:has(.modal-button-container):has(.debug-textarea) {
+  /* Show shadow below buttons */
+  overflow: visible;
+  padding: var(--input-border-width);
+  margin-bottom: 2.5rem;
+}
+.debug-textarea {
+  margin: 0;
+  border-radius: 0;
+}
+
+/********* Content area *********/
+
+.view-content > .markdown-source-view.mod-cm6 > .cm-editor > .cm-scroller {
+  padding: 1em 2em 3em 2em;
+  padding: 0;
+}
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: none;
+  width: 100%;
+}
+.markdown-source-view .cm-contentContainer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.markdown-source-view.mod-cm6.is-readable-line-width .cm-sizer .cm-contentContainer,
+.markdown-preview-view.is-readable-line-width .markdown-preview-sizer > div:not(.mod-header):not(.mod-footer):not(.markdown-preview-pusher) {
+  margin: 0 auto;
+  max-width: var(--file-line-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 100%;
+}
+.markdown-rendered .mod-header {
+  background: pink;
+  margin-bottom: 3rem;
+}
+/* Override inline styles */
+.cm-content {
+  /* Live Preview */
+  padding-bottom: 0 !important;
+}
+.markdown-preview-sizer {
+  /* Reading Mode */
+  padding-bottom: 0 !important;
+}
+
+/* Order in content area */
+.inline-title {
+  order: 0;
+}
+.mod-root .metadata-container,
+.setting-properties-position-above .mod-root .is-live-preview .metadata-container {
+  order: 1;
+}
+.setting-properties-position-below .mod-root .is-live-preview .metadata-container {
+  order: 3;
+}
+.setting-properties-position-below .mod-root .is-live-preview .embedded-backlinks {
+  padding: 0 2rem 0.5rem 2rem;
+}
+.cm-contentContainer {
+  order: 2;
+}
+.embedded-backlinks {
+  order: 3;
+}
+
+/* Consistent styles for inline metadata sections */
+.mod-root .metadata-container,
+.mod-root .embedded-backlinks {
+  background: var(--metadata-property-background);
+  border: 0;
+  font-family: var(--font-interface);
+  padding: 0.5rem 2rem;
+  margin: 0;
+  border-radius: 0;
+  transform: none;
+  width: 100%;
+}
+
+/* Tab content header */
+.view-header {
+  height: auto; /* Don't use --header-height */
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+/* Inline title (i.e. filename) */
+.inline-title {
+  /* We don't need an extra inline title below the header. */
+  display: none;
+}
+.view-header-title-container {
+  display: none;
+}
+.show-inline-title .view-header-title-container {
+  display: flex;
+}
+.view-header-title {
+  display: none;
+}
+.show-inline-title.is-focused .workspace-leaf.mod-active .view-header-title  {
+  /* Use the "Display Inline Title" setting to show/hide the title in the header. */
+  display: block;
+}
+
+.view-header-title-parent .view-header-breadcrumb {
+}
+.view-header-title-parent .view-header-breadcrumb:hover {
+  background: transparent;
+  cursor: auto;
+}
+
+/********* Properties *********/
+.workspace > .workspace-split:not(.mod-root) .metadata-container {
+  --metadata-divider-width: inherit;
+}
+.setting-properties-position-below .mod-root .is-live-preview .metadata-container {
+  padding: 0.5em 2em 0 2em;
+}
+.setting-properties-position-below .mod-root .is-live-preview .metadata-container:has(~ .embedded-backlinks[style*="display: none"]) {
+  padding-bottom: 0.5em;
+}
+.metadata-properties-heading .metadata-properties-title {
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-medium);
+}
+.view-content .metadata-properties-heading .collapse-indicator svg.svg-icon,
+.view-content .metadata-properties-heading .is-collapsed .collapse-indicator svg.svg-icon {
+  color: var(--color-text-interactive);
+}
+.metadata-properties-title {
+  font-size: var(--font-ui-smaller);
+  color: var(--text-faint);
+  font-weight: var(--font-semibold);
+  padding: 0;
+  user-select: none;
+}
+.metadata-property {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  gap: 0.5em;
+  padding: var(--input-border-width);
+}
+.metadata-property:focus-within {
+  background: var(--nav-item-background-hover);
+  border-color: var(--nav-item-background-hover);
+  box-shadow: none;
+}
+.metadata-property:hover {
+  box-shadow: none;
+}
+.metadata-property .metadata-property-key {
+  align-items: center;
+  display: flex;
+  gap: 0.5em;
+}
+.metadata-property .metadata-property-key:focus-within {
+  background: transparent;
+}
+input.metadata-property-key-input {
+  color: var(--color-text-interactive);
+}
+.metadata-property .multi-select-input {
+  padding: var(--pill-padding-y) 0;
+}
+.metadata-property-icon:before {
+  display: none;
+}
+
+/********** Core Plugin: Audio Recorder **********/
+
+audio::-webkit-media-controls-enclosure {
+  border: none;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  max-height: none;
+}
+audio::-webkit-media-controls-panel {
+  background: var(--controls-container-background);
+  border: none;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+/********** Core Plugin: Backlinks **********/
+
+.backlink-pane > .tree-item-self {
+  color: var(--color-text-interactive);
+  width: inherit;
+}
+.backlink-pane .search-result:not(.is-collapsed) .search-result-file-title {
+  color: var(--color-text-interactive);
+}
+.backlink-pane .search-result-container {
+  margin-left: 1em;
+}
+.search-result-file-match-replace-button {
+  bottom: 0.375em;
+}
+.embedded-backlinks .backlink-pane .search-result-file-matches {
+  background: none;
+  box-shadow: none;
+}
+.embedded-backlinks {
+  /* Terrible to use !important, but otherwise this gets an inline style enforcing a min height that can leave lots of unused space at the bottom. */
+  min-height: 0 !important;
+}
+.setting-properties-position-below .mod-root .is-live-preview .metadata-container[data-property-count="0"] ~ .embedded-backlinks {
+  padding-top: 0.5rem;
+}
+.embedded-backlinks .backlink-pane {
+  padding: 0;
+}
+.embedded-backlinks .backlink-pane .tree-item-self .tree-item-inner {
+  font-size: var(--font-ui-smaller);
+  font-weight: var(--font-medium);
+}
+.embedded-backlinks .backlink-pane .tree-item-self .tree-item-flair-outer {
+  /* Normally this would be positioned ot the right, but for embedded backlinks this overlaps with the controls */
+  margin-left: 1em;
+}
+.embedded-backlinks .nav-buttons-container {
+  top: 0;
+  right: 0;
+}
+.embedded-backlinks .backlink-pane .search-result-file-title .tree-item-icon {
+  position: relative;
+  padding: 0;
+  margin-left: 0;
+  left: inherit;
+}
+.embedded-backlinks .backlink-pane .search-result-file-matches {
+  margin-left: 1em;
+}
+.embedded-backlinks .backlink-pane .search-empty-state {
+  margin: 0;
+}
+.embedded-backlinks .nav-header ~ .search-input-container {
+    width: calc(100% - 150px);
+    margin: 0 0 0 0;
+}
+
+/********** Core Plugin: Bookmarks **********/
+
+.view-action.mod-bookmark {
+  --icon-color: transparent;
+  color: var(--color-text-interactive);
+}
+.view-action.mod-bookmark:hover {
+  color: var(--color-text-interactive-hover)
+}
+
+/********** Core Plugin: Canvas **********/
+
+.canvas-submenu {
+  background: var(--theme-color-interactiveActive);
+  top: calc(100% - 0.5em);
+  box-shadow: none;
+}
+.canvas-card-menu .canvas-card-menu-button.mod-draggable:hover svg {
+    transform: translateY(0);
+    filter: none;
+}
+.canvas-controls {
+  gap: 0.5em;
+}
+.canvas-control-group {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/********** Core Plugin: Command Palette **********/
+
+/*   No special styles: uses shared .prompt */
+
+/********** Core Plugin: Files **********/
+
+.nav-files-container .nav-file-title {
+  justify-content: space-between;
+  gap: 0;
+  padding: 0;
+}
+.nav-file-title-content {
+  flex-grow: 1;
+}
+.nav-file-tag {
+  background: transparent;
+  border: solid 1px var(--nav-file-tag-border-color);
+  color: var(--theme-color-navFileTag);
+}
+.nav-file-title.is-active .nav-file-tag {
+  color: var(--theme-color-navFileTagActive);
+  border-color: var(--theme-color-navFileTagActiveBorder);
+}
+
+/********** Core Plugin: File Recovery **********/
+
+.mode-sync-history {}
+.sync-history-list-container {
+  border: none;
+}
+.sync-history-list {
+  gap: 1em;
+}
+.sync-history-content-container {
+  background-color: var(--theme-color-settingsBg);
+}
+.sync-history-content .setting-item,
+.sync-history-content .setting-item:first-child,
+.mod-sync-history .sync-history-content-buttons {
+  background-color: var(--theme-color-settingsBg);
+  border: none;
+  margin: 0;
+  padding: 1em;
+}
+.sync-history-content .setting-item:first-child {
+  box-shadow: var(--shadow-s);
+  z-index: 1;
+}
+.sync-history-list-item-header:hover {
+    background: transparent;
+}
+
+/********** Core Plugin: Graph view **********/
+
+.graph-control-section {
+  border: none;
+  padding: 0.25rem;
+}
+.graph-controls .graph-controls-button {
+  display: none;
+}
+.graph-controls-button.mod-close {
+  border-radius: 100%;
+  color: var(--color-text-interactive);
+}
+.graph-controls-button.mod-close:hover {
+  color: var(--color-text-interactive);
+}
+.graph-controls .tree-item-self .tree-item-icon {
+  margin: 0;
+}
+.mod-root .workspace-leaf-content[data-type="graph"] .view-content {
+  background-color: var(--theme-color-graphViewBg);
+  margin-top: 6px;
+  border-radius: var(--tab-radius);
+}
+.mod-left-split .workspace-leaf-content[data-type="graph"] .view-content,
+.mod-right-split .workspace-leaf-content[data-type="graph"] .view-content {
+  background: transparent;
+}
+.graph-view.color-arrow,
+.graph-view.color-line {
+  color: var(--theme-color-graphLine);
+}
+
+/********** Core Plugin: Note composer **********/
+
+/*   No special styles: uses shared .prompt */
+
+/********** Core Plugin: Outgoing links **********/
+
+.tree-item-self.is-clickable.outgoing-link-item {
+  cursor: var(--cursor-link);
+  text-decoration-line: var(--link-decoration);
+  text-decoration-thickness: var(--link-decoration-thickness);
+  color: var(--link-color);
+}
+.tree-item-self.is-clickable.outgoing-link-item .tree-item-inner-subtext {
+    color: inherit;
+    font-size: 85%;
+}
+body:not(.is-grabbing) .tree-item-self.is-clickable.outgoing-link-item:hover {
+  background: transparent;
+  color: var(--link-color-hover);
+  font-weight: inherit;
+  text-decoration-line: var(--link-decoration-hover);
+}
+
+/********** Core Plugin: Page preview **********/
+
+.popover {
+  border: none;
+  box-shadow: var(--shadow-l);
+  padding: 0.5rem;
+}
+.popover.hover-popover {
+  padding: 0.5rem;
+}
+
+/********** Core Plugin: Publish **********/
+
+.modal.mod-publish {
+  padding: 0;
+}
+.modal.mod-publish .modal-title {
+  font-size: var(--font-ui-medium);
+  line-height: 1.4em;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0.5em calc(var(--size-2-3) + 2rem);
+}
+
+/********** Core Plugin: Search **********/
+
+.workspace-leaf-content[data-type="search"] {
+  padding: 0.5rem 1rem;
+}
+.search-row,
+.search-info-container,
+.search-params,
+.search-results-info {
+  margin: 0 0 0.5rem 0;
+}
+
+.search-params .setting-item {
+  margin: 0;
+}
+.search-result-container.mod-global-search {
+  margin-top: 1em;
+  padding: 0;
+}
+.search-results-children {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.search-results-info {
+  border-bottom: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 1em;
+  margin: 0;
+}
+.search-results-result-count {
+}
+.search-results-info .dropdown {
+  max-width: 12em;
+  text-align-last: left;
+}
+
+/********** Core Plugin: Slides **********/
+
+body {
+  /* Match slide typography to regular typography */
+  --r-background-color: var(--background-primary);
+  --r-block-margin: 20px;
+  --r-code-font: var(--font-monospace-theme);
+  --r-heading-color: var(--text-normal);
+  --r-heading-font-weight: var(--h1-weight);
+  --r-heading-font: var(--font-text-theme:);
+  --r-heading-letter-spacing: normal;
+  --r-heading-line-height: 1.2;
+  --r-heading-margin: 0.67em 0 0 0;
+  --r-heading-text-shadow: none;
+  --r-heading-text-transform: none;
+  --r-heading1-size: 2.5em;
+  --r-heading1-text-shadow: none;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.3em;
+  --r-heading4-size: 1em;
+  --r-link-color-dark: var(--link-color-active);
+  --r-link-color-hover: var(--link-color-hover);
+  --r-link-color: var(--link-color);
+  --r-main-color: var(--text-normal);
+  /* For some reason this seems to need to be in px */
+  --r-main-font-size: 42px;
+  --r-main-font: var(--font-text-theme);
+}
+.slides-close-btn {
+  line-height: 0;
+  width: 18px;
+  height: 18px;
+}
+.reveal-viewport {
+  background-color: var(--background-primary);
+  color: var(--text-normal);
+}
+.slides-close-btn > svg > rect {
+  display: none;
+}
+.slides-container .slide .controls button {
+  background: transparent;
+  border-radius: 100%;
+  box-shadow: none;
+  color: var(--color-text-interactive);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+}
+.slides-container .slide .controls button:hover {
+  background: var(  --theme-color-navigationButtonBgHover);
+}
+.slides-container .slide .controls button .controls-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.reveal .controls .controls-arrow:before,
+.reveal .controls .controls-arrow:hover:before  {
+  transform: translateX(0.5em) translateY(1em) rotate(45deg);
+  width: 1rem;
+}
+.reveal .controls .controls-arrow:after,
+.reveal .controls .controls-arrow:hover:after {
+  transform: translateX(0.5em) translateY(1em) rotate(-45deg);
+  width: 1rem;
+}
+
+/********** Core Plugin: Sync **********/
+
+/* Deleted files modal */
+.modal:has(.sync-file-tree-container) .modal-content {
+  /* There's no button container below the list */
+  padding-bottom: 0;
+}
+.modal .vault-list,
+.modal .sync-file-tree-container {
+  margin: 0 -2em;
+}
+.modal:has(.vault-list) .modal-title {
+  box-shadow: var(--shadow-s);
+  z-index: 1;
+}
+.modal:has(.vault-list) .modal-button-container {
+  padding: 1em 0 0 0;
+}
+.is-phone .vault-list-item {
+  /* Fit button snugly to right */
+  padding-right: 0.5em;
+}
+.sync-file-tree-container ~ p {
+  /* Targets bulk restore modal */
+  padding: 1em 0
+}
+.modal.mod-sync-log {
+  padding: 0;
+}
+.modal.mod-sync-log .modal-title {
+  font-size: var(--font-ui-medium);
+  line-height: 1.4em;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0.5em calc(var(--size-2-3) + 2rem);
+}
+.modal.mod-sync-log .setting-item {
+  margin: 0;
+}
+.modal.mod-sync-log .sync-log-container {
+  border: none;
+  background: var(--theme-color-logBg);
+  color: var(--theme-color-log);
+  padding: 1.5em;
+}
+
+/********** Core Plugin: Tags view **********/
+
+.tag-pane-tag > .tree-item-inner {
+  /* Tags in sidebar styled the same as in notes, but ligher/darker to sit on colored background */
+  background-color: var(--theme-color-tagBgSidebar);
+  border-radius: var(--tag-radius);
+  border: var(--tag-border-width) solid var(--tag-border-color);
+  color: var(--theme-color-tagSidebar);
+  font-weight: var(--tag-weight);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+  vertical-align: baseline;
+}
+.tag-pane-tag > .tree-item-inner:before {
+  content: "#";
+  display: inline;
+}
+.tag-pane-tag > .tree-item-inner > .tree-item-inner-text {
+  display: inline;
+}
+.tag-pane-tag:hover {
+  cursor: var(--cursor-link);
+}
+
+/********** Community Plugin: Excalidraw **********/
+
+.excalidraw-view .excalidraw .Island,
+.excalidraw-view .excalidraw .mobile-misc-tools-container  {
+  background: var(--controls-container-background);
+  border: none;
+  padding: 0.25rem;
+  gap: 0;
+  box-shadow: var(--theme-shadow-input);
+  border-radius: 0.5rem;
+}
+.excalidraw-view .excalidraw .Island .ToolIcon__icon,
+.excalidraw-view .excalidraw .mobile-misc-tools-container .ToolIcon__icon {
+  --icon-size: var(--icon-s);
+  --icon-stroke: var(--icon-s-stroke-width);
+  border-radius: var(--clickable-icon-radius);
+  color: var(--color-text-interactive);
+  opacity: var(--icon-opacity);
+  background-color: transparent;
+  border: none;
+}
+.excalidraw-view .excalidraw .Island .ToolIcon__icon:hover,
+.excalidraw-view .excalidraw .mobile-misc-tools-container .ToolIcon__icon:hover {
+  color: var(--color-text-interactive-hover);
+  background-color: var(--background-modifier-hover);
+  --icon-fill-color: var(--color-text-interactive-hover);
+}
+/* Active state */
+.excalidraw-view .excalidraw .ToolIcon.fillable .ToolIcon_type_radio:checked+.ToolIcon__icon,
+.excalidraw-view .excalidraw .ToolIcon.fillable .ToolIcon_type_checkbox:checked+.ToolIcon__icon,
+.excalidraw-view .excalidraw .ToolIcon .ToolIcon_type_radio:checked+.ToolIcon__icon,
+.excalidraw-view .excalidraw .ToolIcon .ToolIcon_type_checkbox:checked+.ToolIcon__icon {
+  opacity: var(--icon-opacity-hover);
+  color: var(--color-text-interactive-active);
+  background-color: var(--theme-color-interactiveActive);
+  --icon-fill-color: var(--color-text-interactive-active);
+}
+.excalidraw-view .excalidraw .App-toolbar__divider {
+    width: 1rem;
+    height: 1.5rem;
+    align-self: center;
+    background-color: transparent;
+    margin: 0 0.25rem;
+}
+.excalidraw-view .excalidraw .ToolIcon {
+  cursor: default;
+}
+.excalidraw-view .excalidraw .zoom-actions,
+.excalidraw-view .excalidraw .zoom-actions .Stack {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+}
+
+/********** Community Plugin: Style Settings **********/
+
+.modal-style-settings {
+  /* Show shadow below buttons */
+  overflow: visible;
+}
+.modal-style-settings textarea {
+  margin-top: var(--input-border-width);
+}
+.modal-style-settings .modal-content {
+  padding-bottom: 1em;
+  margin-bottom: -1em;
+}
+
+/********** Community Plugin: Recent Files **********/
+
+.recent-files-title {
+  align-items: center;
+  padding-right: 0.375em;
+}

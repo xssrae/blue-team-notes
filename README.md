@@ -1,5 +1,5 @@
 # My studies, documents and tools for Blue Team
-![canvas](https://github.com/xssrae/Blue-Team-Notes/blob/main/IMAGES/CANVAS.png)
+![[CANVAS.png]]
 Here i have all my Obsidian notes for study Blue Team. Some notes haven't been ended for many reasons but should be cool to see updates to this repository.
 
 Feel free to use and consult them if you want.
@@ -12,6 +12,7 @@ Feel free to use and consult them if you want.
 - [Security Blue Team](https://www.securityblue.team/)
 # Folders
 - [Forense](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSE)
+- [Criptography]()
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
 - [Networking](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKING)
 - [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)

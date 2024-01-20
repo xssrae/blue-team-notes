@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "9213c4705e3e6763",
+        "id": "69c3848b210a3947",
         "type": "tabs",
         "children": [
           {
-            "id": "2d2d1b548dcb74a0",
+            "id": "ca9260f22597d8a4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md"
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md"
               }
             }
           },
@@ -154,17 +154,38 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "eda1ebd4a817dca5",
+  "active": "ca9260f22597d8a4",
   "lastOpenFiles": [
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/4. Exemplo de Análise 1.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/3. O que deve-se atentar ao analisar malware.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/2. Configuração de Ambiente.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/5. Exemplo de Análise 2.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
+    "IMAGES/Pasted image 20240119212558.png",
+    "MALWARE ANALISYS/Untitled",
+    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "README.md",
+    "IMAGES/CANVAS.png",
+    "IMAGES/Pasted image 20231228140400.png",
+    "IMAGES/Pasted image 20240102132908.png",
+    "Pasted image 20240119204255.png",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/1. Introdução.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware",
+    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
+    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
+    "NETWORKING/TCPSDump.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária",
+    "REVERSE ENGINEERING",
+    "NETWORKING/Introdução ao tcpdump.md",
+    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
     "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
     "Blocos de Anotações do OneNote",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
-    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
     "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
     "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
-    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
     "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
     "MALWARE ANALISYS/Rangeforce/1. Sandboxing Malware.md",
     "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
@@ -174,30 +195,10 @@
     "SECURITY OPERATIONS/SOC - LetsDefend",
     "NETWORKING/Camadas.png",
     "SECURITY OPERATIONS/Gerenciamento de Ameaças Cibernéticas/1. Governança.md",
-    "SECURITY OPERATIONS/Gerenciamento de Ameaças Cibernéticas",
     "CRIPTOGRAPHY/Criar hashes.md",
-    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
     "FORENSE/1.md",
-    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough",
-    "README.md",
-    "IMAGES/CANVAS.png",
     "CANVAS.png",
     "Pasted image 20240109172655.png",
-    "IMAGES/Pasted image 20240102132908.png",
-    "NETWORKING/Wireshark.md",
-    "NETWORKING/TCPSDump.md",
-    "NETWORKING/Protocolos.md",
-    "NETWORKING/Infra.md",
-    "NETWORKS/Untitled.md",
-    "SECURITY OPERATIONS/Incident Response - Range Force/4. Exercício de comprometimento de perímetro.md",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
-    "SECURITY OPERATIONS/Incident Response - Range Force/3. Ataques de desfiguração de sites.md",
-    "CRIPTOGRAPHY",
-    "SECURITY OPERATIONS/Incident Response - Range Force",
-    "IMAGES/Pasted image 20231228140400.png",
-    "IMAGES",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam",
     "Untitled.canvas",
     "TdYZvCDHmMy4MfghP.png"
   ]

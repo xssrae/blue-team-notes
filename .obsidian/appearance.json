@@ -1,4 +1,13 @@
 {
-  "accentColor": "",
-  "cssTheme": "AnuPpuccin"
+  "accentColor": "#7c59b1",
+  "cssTheme": "Dawn",
+  "translucency": false,
+  "monospaceFontFamily": "Inter",
+  "textFontFamily": "Inter",
+  "interfaceFontFamily": "Inter",
+  "baseFontSize": 15,
+  "baseFontSizeAction": true,
+  "showViewHeader": true,
+  "nativeMenus": true,
+  "theme": "moonstone"
 }
