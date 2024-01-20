@@ -1,5 +1,5 @@
 # My studies, documents and tools for Blue Team
-![[canvas19.png]]
+![canvas19.png](https://github.com/xssrae/Blue-Team-Notes/blob/main/IMAGES/canvas19.png)
 Here i have all my Obsidian notes for study Blue Team. Some notes haven't been ended for many reasons but should be cool to see updates to this repository.
 
 Feel free to use and consult them if you want.
