@@ -16,7 +16,6 @@ Feel free to use and consult them if you want.
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
 - [Networking](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKING)
 - [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
-- [Threat Intelligence](https://github.com/xssrae/Blue-Team-Notes/tree/main/THREAT%20INTELLIGENCE)
 - [Networks](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKS)
 - [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
 - [Threat Intelligence](https://github.com/xssrae/Blue-Team-Notes/tree/main/THREAT%20INTELLIGENCE)
