@@ -11,9 +11,9 @@
             "id": "f8b0782b9bb82383",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "image",
               "state": {
-                "file": "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf"
+                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg"
               }
             }
           }
@@ -83,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
+                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
+                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf"
+                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg"
               }
             }
           },
@@ -152,12 +152,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f8b0782b9bb82383",
+  "active": "eda1ebd4a817dca5",
   "lastOpenFiles": [
-    "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
-    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
-    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+    "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+    "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
+    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
+    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
+    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
     "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
+    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
+    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
+    "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
     "NETWORKING/Infra.md",
     "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
     "Blocos de Anotações do OneNote",
@@ -172,16 +179,10 @@
     "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
     "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
-    "Hackers-do-Bem/HackersDoBem/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
-    "Hackers-do-Bem/HackersDoBem/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
     "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/6.Meu malware não faz nada.md",
     "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
     "Hackers-do-Bem/HackersDoBem/Aula 1 - Grandezas computacionais e sistema numéricos.md",
     "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
     "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 2.md",
@@ -191,7 +192,6 @@
     "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Untitled.md",
     "Hackers-do-Bem/HackersDoBem/Untitled.md",
     "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/1.md",
     "IMAGES/Pasted image 20240102132908.png",
     "IMAGES/Pasted image 20240119212558.png",
     "IMAGES/Pasted image 20231228140400.png",

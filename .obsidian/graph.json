@@ -8,7 +8,7 @@
   "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "MALWARE-ANALISYS",
+      "query": "MALWARE ANALISYS",
       "color": {
         "a": 1,
         "rgb": 7282895
@@ -64,7 +64,7 @@
       }
     }
   ],
-  "collapse-display": true,
+  "collapse-display": false,
   "showArrow": false,
   "textFadeMultiplier": -2.4,
   "nodeSizeMultiplier": 2.0140625,
@@ -74,6 +74,6 @@
   "repelStrength": 7.10207100591716,
   "linkStrength": 0.908949704142012,
   "linkDistance": 216,
-  "scale": 0.18462326225858233,
+  "scale": 0.36288736930121435,
   "close": false
 }
