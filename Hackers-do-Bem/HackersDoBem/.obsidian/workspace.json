@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "bfd4d2676a2d773a",
+    "type": "split",
+    "children": [
+      {
+        "id": "e0029dbcbb893402",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67286ab51cdef4a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e1a7638a64dd4745",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "210bd6e1dc86809d",
+    "type": "split",
+    "children": [
+      {
+        "id": "38652cd978b2d2c8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "187300ace2d47e3c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9dbf23a110cbdd17",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e58960fa95449182",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "e4ef11dbf7d64299",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e10004a70b65a08",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2d01343d4e15b5fa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6f4bb04f92ffc3cc",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5e0f374495fa7978",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "60fda08d4b40480c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "e1a7638a64dd4745",
+  "lastOpenFiles": [
+    "Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+    "Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
+    "Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
+    "Nivelamento/3 - Compreender internet e camada de acesso a rede",
+    "9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
+    "vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+    "Nivelamento/2 - Identificar componentes de hardware de computador",
+    "Welcome.md",
+    "Nivelamento/1 -",
+    "Nivelamento"
+  ]
+}

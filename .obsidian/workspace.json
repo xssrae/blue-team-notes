@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "69c3848b210a3947",
+        "id": "1281c4d0714967f8",
         "type": "tabs",
         "children": [
           {
-            "id": "ca9260f22597d8a4",
+            "id": "f8b0782b9bb82383",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "IMAGES/Pasted image 20240102132908.png"
+                "file": "NETWORKING/Infra.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IMAGES/Pasted image 20240102132908.png",
+                "file": "NETWORKING/Infra.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IMAGES/Pasted image 20240102132908.png",
+                "file": "NETWORKING/Infra.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IMAGES/Pasted image 20240102132908.png"
+                "file": "NETWORKING/Infra.md"
               }
             }
           },
@@ -152,52 +154,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "eda1ebd4a817dca5",
+  "active": "f8b0782b9bb82383",
   "lastOpenFiles": [
-    "IMAGES/Pasted image 20240119212558.png",
-    "IMAGES/Pasted image 20231228140400.png",
-    "IMAGES/Pasted image 20240102132908.png",
-    "IMAGES/canvas19.png",
-    "README.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/4. Exemplo de Análise 1.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/3. O que deve-se atentar ao analisar malware.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/2. Configuração de Ambiente.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/5. Exemplo de Análise 2.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-    "MALWARE ANALISYS/Untitled",
-    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
-    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "Pasted image 20240119204255.png",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/1. Introdução.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware",
-    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
-    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
-    "NETWORKING/TCPSDump.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária",
-    "REVERSE ENGINEERING",
-    "NETWORKING/Introdução ao tcpdump.md",
-    "CRIPTOGRAPHY/Criar chaves, criptografar e descriptografar e assinar e verificar usando o OpenSSL.md",
     "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
     "Blocos de Anotações do OneNote",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
-    "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
-    "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
-    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
-    "MALWARE ANALISYS/Rangeforce/1. Sandboxing Malware.md",
-    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
-    "MALWARE ANALISYS/Rangeforce",
-    "MALWARE ANALISYS/LetsDefend",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend",
+    "NETWORKING/modelo-OSI.pdf",
+    "NETWORKING/Infra.md",
     "NETWORKING/Camadas.png",
-    "SECURITY OPERATIONS/Gerenciamento de Ameaças Cibernéticas/1. Governança.md",
-    "CRIPTOGRAPHY/Criar hashes.md",
-    "FORENSE/1.md",
+    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
+    "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
+    "MALWARE ANALISYS/Nova pasta",
+    "MALWARE ANALISYS/AFD/Material/SlidesMalwareStarter.pdf",
+    "MALWARE ANALISYS/AFD/Material/Cartilha Sandbox - AFD.pdf",
+    "MALWARE ANALISYS/AFD/Material",
+    "MALWARE ANALISYS/AFD/Nova pasta",
+    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
+    "NETWORKING/Protocolos.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Untitled.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
+    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
+    "Hackers-do-Bem/HackersDoBem/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
+    "Hackers-do-Bem/HackersDoBem/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/6.Meu malware não faz nada.md",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
+    "Hackers-do-Bem/HackersDoBem/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 2.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Módulo 1/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Módulo 1/Aula 2.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Untitled.md",
+    "Hackers-do-Bem/HackersDoBem/Untitled.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/1.md",
+    "IMAGES/Pasted image 20240102132908.png",
+    "IMAGES/Pasted image 20240119212558.png",
+    "IMAGES/Pasted image 20231228140400.png",
+    "IMAGES/canvas19.png",
+    "Pasted image 20240119204255.png",
     "CANVAS.png",
     "Pasted image 20240109172655.png",
-    "Untitled.canvas",
-    "TdYZvCDHmMy4MfghP.png"
+    "Untitled.canvas"
   ]
 }

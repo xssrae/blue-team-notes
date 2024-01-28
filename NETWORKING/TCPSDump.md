@@ -27,7 +27,7 @@ A maioria dos recursos de captura em Wireshark também estão disponíveis no TC
 	`tcpdump dst port 25`
 
 - **Filtrar por protocolo**:
- `tcpdump ftp`
+	 `tcpdump ftp`
  
 - **Operadores lógicos**, como **e** & **ou** podem ser usados para termos em cadeia. Por último, para fazer com que o TCPDUmp saia depois de capturar _x_ número de pacotes
    use `-c`.
