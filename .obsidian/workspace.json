@@ -11,9 +11,11 @@
             "id": "f8b0782b9bb82383",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg"
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg"
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md"
               }
             }
           },
@@ -154,8 +156,10 @@
   },
   "active": "eda1ebd4a817dca5",
   "lastOpenFiles": [
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
     "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
+    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
     "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
     "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
@@ -179,8 +183,6 @@
     "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
     "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
     "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/6.Meu malware não faz nada.md",
     "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
     "Hackers-do-Bem/HackersDoBem/Aula 1 - Grandezas computacionais e sistema numéricos.md",
