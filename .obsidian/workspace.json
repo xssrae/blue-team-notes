@@ -11,11 +11,9 @@
             "id": "f8b0782b9bb82383",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-                "mode": "source",
-                "source": false
+                "file": "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf"
               }
             }
           }
@@ -29,19 +27,23 @@
     "type": "split",
     "children": [
       {
-        "id": "88e5edf19cb7ef4e",
+        "id": "e4f366f62158d5fc",
         "type": "tabs",
         "children": [
           {
-            "id": "eda1ebd4a817dca5",
+            "id": "f29df0a641e1564b",
             "type": "leaf",
             "state": {
-              "type": "file-explorer",
-              "state": {
-                "sortOrder": "alphabetical"
-              }
+              "type": "calendar",
+              "state": {}
             }
-          },
+          }
+        ]
+      },
+      {
+        "id": "d4aa51410c06eaba",
+        "type": "tabs",
+        "children": [
           {
             "id": "3f589a95b23054ac",
             "type": "leaf",
@@ -64,49 +66,6 @@
               "type": "bookmarks",
               "state": {}
             }
-          }
-        ]
-      }
-    ],
-    "direction": "horizontal",
-    "width": 200
-  },
-  "right": {
-    "id": "b2eae5ceaa5ce5d4",
-    "type": "split",
-    "children": [
-      {
-        "id": "8368a3d4de439ca4",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "190d1cefccd40efa",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "2eca0c1a306ab955",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              }
-            }
           },
           {
             "id": "5d8dd80c24f5efaa",
@@ -118,89 +77,97 @@
                 "useHierarchy": true
               }
             }
-          },
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 269.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "b2eae5ceaa5ce5d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "8368a3d4de439ca4",
+        "type": "tabs",
+        "children": [
           {
-            "id": "5ebc10a2b4f83888",
+            "id": "eda1ebd4a817dca5",
             "type": "leaf",
             "state": {
-              "type": "outline",
+              "type": "file-explorer",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md"
+                "sortOrder": "alphabetical"
               }
-            }
-          },
-          {
-            "id": "f29df0a641e1564b",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
+      "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
   "active": "eda1ebd4a817dca5",
   "lastOpenFiles": [
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
+    "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
+    "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware/1.md",
+    "IMAGES/Pasted image 20240128182835.png",
+    "Untitled.canvas",
+    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
+    "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware",
+    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
+    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/4. EDR.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/3. Firewall.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/1. IDS.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/2. IPS.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
+    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança",
+    "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
+    "SECURITY OPERATIONS/Untitled",
+    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
+    "MALWARE ANALISYS/Rangeforce/5. Analisando um Malware Estáticamente.md",
+    "IMAGES/Pasted image 20240128175427.png",
+    "IMAGES/Pasted image 20240128175142.png",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
+    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
+    "THREAT INTELLIGENCE/CyberKill Chain.md",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
+    "THREAT INTELLIGENCE/CyberKill Chain",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
     "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
     "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
     "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
     "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
-    "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
-    "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
-    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
-    "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
     "NETWORKING/Infra.md",
     "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
     "Blocos de Anotações do OneNote",
-    "NETWORKING/modelo-OSI.pdf",
     "NETWORKING/Camadas.png",
-    "MALWARE ANALISYS/Nova pasta",
-    "MALWARE ANALISYS/AFD/Material",
-    "MALWARE ANALISYS/AFD/Nova pasta",
     "NETWORKING/Protocolos.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Untitled.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
-    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica de Malware/6.Meu malware não faz nada.md",
-    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "Hackers-do-Bem/HackersDoBem/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 2.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Módulo 1/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Módulo 1/Aula 2.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Untitled.md",
-    "Hackers-do-Bem/HackersDoBem/Untitled.md",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/Módulo 1/Aula 1 - Grandezas computacionais e sistema numéricos.md",
     "IMAGES/Pasted image 20240102132908.png",
     "IMAGES/Pasted image 20240119212558.png",
     "IMAGES/Pasted image 20231228140400.png",
-    "IMAGES/canvas19.png",
-    "Pasted image 20240119204255.png",
-    "CANVAS.png",
-    "Pasted image 20240109172655.png",
-    "Untitled.canvas"
+    "IMAGES/canvas19.png"
   ]
 }
