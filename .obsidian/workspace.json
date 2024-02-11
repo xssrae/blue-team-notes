@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "1281c4d0714967f8",
+        "id": "a2005848cc559393",
         "type": "tabs",
         "children": [
           {
-            "id": "f8b0782b9bb82383",
+            "id": "08694345fd2e904d",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf"
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -50,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:SECURITY-OPERATIONS",
+                "query": "tag:FORENSICS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,8 +80,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -103,12 +104,51 @@
                 "sortOrder": "alphabetical"
               }
             }
+          },
+          {
+            "id": "3dbb199b54e6e089",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3313c450eecf8562",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "830676b699ccba0c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md"
+              }
+            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -121,51 +161,52 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "eda1ebd4a817dca5",
+  "active": "08694345fd2e904d",
   "lastOpenFiles": [
-    "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
-    "Blocos de Anotações do OneNote",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
+    "REVERSE ENGINEERING/RE 1 - LetsDefend/3. Conceitos básicos.md",
+    "REVERSE ENGINEERING/RE 1 - LetsDefend/2. Noções básicas de engenharia reversa.md",
+    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
+    "FORENSICS/1.md",
+    "IMAGES/Pasted image 20240102132908.png",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/7. Soluções de Perda de Dados e Gestão de Ativos.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/6 Soluções de Sandbox.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/8. WAF.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/11. Soluções de Segurança de E-mail.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/10. Proxy.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/9. Balancer de carga.md",
+    "README.md",
+    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
+    "MALWARE ANALISYS/Rangeforce/5. Analisando um Malware Estáticamente.md",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+    "REVERSE ENGINEERING/RE 1 - LetsDefend/1. Introdução.md",
+    "REVERSE ENGINEERING/RE 1 - LetsDefend",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/1. IDS.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/2. IPS.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/3. Firewall.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/4. EDR.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/5. Antivirus.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
+    "MALWARE ANALISYS/Livros/Pratical Malware Analysis/1. Análise Básica.md",
     "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
     "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
+    "MALWARE ANALISYS/Livros/Pratical Malware Analysis",
+    "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows",
+    "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
+    "Blocos de Anotações do OneNote",
     "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware/1.md",
     "IMAGES/Pasted image 20240128182835.png",
     "Untitled.canvas",
-    "MALWARE ANALISYS/LetsDefend/Malware Analysis Fundamentals.md",
     "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware",
-    "SECURITY OPERATIONS/Endpoint Security - Cisco/Ameaças, Vulnerabilidades.md",
-    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/4. EDR.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/3. Firewall.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/1. IDS.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/2. IPS.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
-    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança",
     "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
-    "SECURITY OPERATIONS/Untitled",
-    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
-    "MALWARE ANALISYS/Rangeforce/5. Analisando um Malware Estáticamente.md",
     "IMAGES/Pasted image 20240128175427.png",
     "IMAGES/Pasted image 20240128175142.png",
-    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
-    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
-    "THREAT INTELLIGENCE/CyberKill Chain.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-    "THREAT INTELLIGENCE/CyberKill Chain",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
-    "Hackers-do-Bem/HackersDoBem/Nivelamento/3 - Compreender internet e camada de acesso a rede/Untitled.md",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
-    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 3 - Armazenamento, Fonte, Placas Offboard e Gabinete.md",
-    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 2.md",
-    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "NETWORKING/Infra.md",
     "NETWORKING/Camadas.png",
-    "NETWORKING/Protocolos.md",
-    "IMAGES/Pasted image 20240102132908.png",
     "IMAGES/Pasted image 20240119212558.png",
     "IMAGES/Pasted image 20231228140400.png",
     "IMAGES/canvas19.png"

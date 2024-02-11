@@ -5,7 +5,7 @@
   "monospaceFontFamily": "Inter",
   "textFontFamily": "Inter",
   "interfaceFontFamily": "Inter",
-  "baseFontSize": 15,
+  "baseFontSize": 14,
   "baseFontSizeAction": true,
   "showViewHeader": true,
   "nativeMenus": true,

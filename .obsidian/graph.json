@@ -5,7 +5,7 @@
   "showAttachments": true,
   "hideUnresolved": true,
   "showOrphans": true,
-  "collapse-color-groups": true,
+  "collapse-color-groups": false,
   "colorGroups": [
     {
       "query": "MALWARE ANALISYS",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "query": "FORENSE",
+      "query": "FORENSICS",
       "color": {
         "a": 1,
         "rgb": 3964887
@@ -39,7 +39,7 @@
       "query": "NETWORKING",
       "color": {
         "a": 1,
-        "rgb": 5431473
+        "rgb": 9302736
       }
     },
     {
@@ -62,18 +62,25 @@
         "a": 1,
         "rgb": 661857
       }
+    },
+    {
+      "query": "Mente-Binária",
+      "color": {
+        "a": 1,
+        "rgb": 6345377
+      }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": false,
-  "textFadeMultiplier": -2.4,
-  "nodeSizeMultiplier": 2.0140625,
-  "lineSizeMultiplier": 0.457291666666667,
+  "textFadeMultiplier": -0.7,
+  "nodeSizeMultiplier": 1.35284090909091,
+  "lineSizeMultiplier": 0.322727272727273,
   "collapse-forces": false,
-  "centerStrength": 0.307766272189349,
-  "repelStrength": 7.10207100591716,
-  "linkStrength": 0.908949704142012,
+  "centerStrength": 0.4375,
+  "repelStrength": 8.18181818181818,
+  "linkStrength": 0.465909090909091,
   "linkDistance": 216,
-  "scale": 0.36288736930121435,
+  "scale": 0.5087618855792633,
   "close": false
 }
