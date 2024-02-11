@@ -11,7 +11,7 @@ Feel free to use and consult them if you want.
 - [LetsDefend](https://app.letsdefend.io/)
 - [Security Blue Team](https://www.securityblue.team/)
 # Folders
-- [Forense](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSE)
+- [Forensics](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSICS)
 - [Criptography]()
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
 - [Networking](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKING)
