@@ -12,7 +12,7 @@ Feel free to use and consult them if you want.
 - [Security Blue Team](https://www.securityblue.team/)
 # Folders
 - [Forensics](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSICS)
-- [Criptography]()
+- [Criptography](https://github.com/xssrae/Blue-Team-Notes/tree/main/CRIPTOGRAPHY)
 - [Malware Analisys](https://github.com/xssrae/Blue-Team-Notes/tree/main/MALWARE%20ANALISYS)
 - [Networking](https://github.com/xssrae/Blue-Team-Notes/tree/main/NETWORKING)
 - [Security Operations](https://github.com/xssrae/Blue-Team-Notes/tree/main/SECURITY%20OPERATIONS)
