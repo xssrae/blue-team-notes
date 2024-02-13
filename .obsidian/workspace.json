@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "a2005848cc559393",
+        "id": "139fedd4aaf33c73",
         "type": "tabs",
         "children": [
           {
-            "id": "08694345fd2e904d",
+            "id": "a14898b797441f7c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
+                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md"
+                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md"
               }
             }
           }
@@ -161,8 +161,33 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "08694345fd2e904d",
+  "active": "a14898b797441f7c",
   "lastOpenFiles": [
+    "Pasted image 20240213124005.png",
+    "Pasted image 20240213123950.png",
+    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/1. Intro.md",
+    "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+    "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
+    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly",
+    "REVERSE ENGINEERING/OST2/Visual Studio/6. Interface de depuração de montagem.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio/5. Configurar compilação - Para montagem simples.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio/4. Interface de Debugging.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio/3. Compilação - Endereços Fixos.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio/2. Criando um novo projeto.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio/1. Download e Instalação.md",
+    "REVERSE ENGINEERING/OST2/Visual Studio",
+    "README.md",
+    "MALWARE ANALISYS/OST2",
+    "MALWARE ANALISYS/Rangeforce/7. Introdução à análise interativa do comportamento.md",
+    "SECURITY OPERATIONS/Análise de Log de Rede.md",
+    "MALWARE ANALISYS/OST2/Visual Studio/Untitled.md",
+    "MALWARE ANALISYS/OST2/Visual Studio",
+    "REVERSE ENGINEERING/OST2",
+    "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
+    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
+    "SECURITY OPERATIONS/Análise de Log de Rede",
+    "NETWORKING/Camadas.png",
+    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend/3. Conceitos básicos.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend/2. Noções básicas de engenharia reversa.md",
@@ -174,41 +199,16 @@
     "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/8. WAF.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/11. Soluções de Segurança de E-mail.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/10. Proxy.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/9. Balancer de carga.md",
-    "README.md",
-    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
-    "MALWARE ANALISYS/Rangeforce/5. Analisando um Malware Estáticamente.md",
-    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
-    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
-    "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
-    "REVERSE ENGINEERING/RE 1 - LetsDefend/1. Introdução.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/1. IDS.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/2. IPS.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/3. Firewall.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/4. EDR.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/5. Antivirus.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
-    "MALWARE ANALISYS/Livros/Pratical Malware Analysis/1. Análise Básica.md",
     "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
     "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
-    "MALWARE ANALISYS/Livros/Pratical Malware Analysis",
-    "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows",
-    "Blocos de Anotações do OneNote/Meu Bloco de Anotações.url",
-    "Blocos de Anotações do OneNote",
-    "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware/1.md",
     "IMAGES/Pasted image 20240128182835.png",
     "Untitled.canvas",
-    "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança",
-    "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
     "IMAGES/Pasted image 20240128175427.png",
     "IMAGES/Pasted image 20240128175142.png",
     "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
-    "NETWORKING/Camadas.png",
     "IMAGES/Pasted image 20240119212558.png",
-    "IMAGES/Pasted image 20231228140400.png",
-    "IMAGES/canvas19.png"
+    "IMAGES/Pasted image 20231228140400.png"
   ]
 }
