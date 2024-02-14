@@ -11,11 +11,9 @@
             "id": "a14898b797441f7c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
-                "mode": "source",
-                "source": false
+                "file": "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf"
               }
             }
           }
@@ -111,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+                "file": "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+                "file": "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md"
+                "file": "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf"
               }
             }
           }
@@ -163,10 +161,27 @@
   },
   "active": "a14898b797441f7c",
   "lastOpenFiles": [
-    "Pasted image 20240213124005.png",
-    "Pasted image 20240213123950.png",
-    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/1. Intro.md",
+    "MALWARE ANALISYS/Rangeforce/9. Análise interativa do comportamento - Estudo de caso.md",
+    "IMAGES/Pasted image 20240213184554.png",
+    "IMAGES/Pasted image 20240213184447.png",
+    "IMAGES/Pasted image 20240213184358.png",
+    "IMAGES/Pasted image 20240213184654.png",
+    "Pasted image 20240213184654.png",
+    "Pasted image 20240213184554.png",
+    "Pasted image 20240213184447.png",
+    "Pasted image 20240213184358.png",
+    "MALWARE ANALISYS/Rangeforce/1. Sandboxing Malware.md",
+    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
+    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
+    "MALWARE ANALISYS/Rangeforce/4. Análise totalmente automatizada.md",
+    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
+    "MALWARE ANALISYS/Rangeforce/7. Introdução à análise interativa do comportamento.md",
     "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+    "MALWARE ANALISYS/Rangeforce/5. Analisando um Malware Estáticamente.md",
+    "IMAGES/Pasted image 20240213144454.png",
+    "IMAGES/Pasted image 20240213144400.png",
+    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/2. Objetos em C++.md",
+    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/1. Intro.md",
     "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
     "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly",
     "REVERSE ENGINEERING/OST2/Visual Studio/6. Interface de depuração de montagem.md",
@@ -178,37 +193,19 @@
     "REVERSE ENGINEERING/OST2/Visual Studio",
     "README.md",
     "MALWARE ANALISYS/OST2",
-    "MALWARE ANALISYS/Rangeforce/7. Introdução à análise interativa do comportamento.md",
     "SECURITY OPERATIONS/Análise de Log de Rede.md",
     "MALWARE ANALISYS/OST2/Visual Studio/Untitled.md",
     "MALWARE ANALISYS/OST2/Visual Studio",
     "REVERSE ENGINEERING/OST2",
     "SECURITY OPERATIONS/Introduction to Defense Readiness Index.md",
-    "MALWARE ANALISYS/Rangeforce/6. Importação e exportação de malware.md",
     "SECURITY OPERATIONS/Análise de Log de Rede",
-    "NETWORKING/Camadas.png",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend/3. Conceitos básicos.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend/2. Noções básicas de engenharia reversa.md",
-    "SECURITY OPERATIONS/Hackers-do-Bem/HackersDoBem/Nivelamento/2 - Identificar componentes de hardware de computador/Aula 1 - Grandezas computacionais e sistema numéricos.md",
-    "FORENSICS/1.md",
-    "IMAGES/Pasted image 20240102132908.png",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/7. Soluções de Perda de Dados e Gestão de Ativos.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/6 Soluções de Sandbox.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/8. WAF.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/11. Soluções de Segurança de E-mail.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Soluções de Segurança/10. Proxy.md",
     "REVERSE ENGINEERING/RE 1 - LetsDefend",
     "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
     "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
-    "IMAGES/Pasted image 20240128182835.png",
-    "Untitled.canvas",
-    "IMAGES/Pasted image 20240128175427.png",
-    "IMAGES/Pasted image 20240128175142.png",
-    "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
-    "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
-    "IMAGES/Pasted image 20240119212558.png",
-    "IMAGES/Pasted image 20231228140400.png"
+    "Untitled.canvas"
   ]
 }
