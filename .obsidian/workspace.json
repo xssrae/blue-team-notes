@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
+                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
+                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
+                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md"
+                "file": "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md"
               }
             }
           }
@@ -156,8 +156,11 @@
   },
   "active": "a14898b797441f7c",
   "lastOpenFiles": [
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/4. Command Injection.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
+    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
+    "SECURITY OPERATIONS/Análise de Log de Rede.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/4. Command Injection.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/5. IDOR.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/6. LFI e RFI.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/2. SQL INjection.md",
@@ -165,7 +168,6 @@
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/1. Introdução.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/3. XSS.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web",
-    "SECURITY OPERATIONS/Análise de Log de Rede.md",
     "README.md",
     "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
     "IMAGES/Pasted image 20240213124005.png",
@@ -191,8 +193,6 @@
     "NETWORKING/Camadas.png",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/2. Números.md",
     "REVERSE ENGINEERING/Fundamentos de Engenharia Reversa - Mente Binária/1. Antes de Começar.md",
-    "REVERSE ENGINEERING/RE 1 - LetsDefend/3. Conceitos básicos.md",
-    "REVERSE ENGINEERING/RE 1 - LetsDefend/2. Noções básicas de engenharia reversa.md",
     "IMAGES/Pasted image 20240102132908.png",
     "REVERSE ENGINEERING/RE 1 - LetsDefend",
     "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
