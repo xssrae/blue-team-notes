@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+                "file": "SECURITY OPERATIONS/Análise de Log de Rede.md",
                 "mode": "source",
                 "source": false
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+                "file": "SECURITY OPERATIONS/Análise de Log de Rede.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+                "file": "SECURITY OPERATIONS/Análise de Log de Rede.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md"
+                "file": "SECURITY OPERATIONS/Análise de Log de Rede.md"
               }
             }
           }
@@ -163,10 +163,11 @@
   },
   "active": "a14898b797441f7c",
   "lastOpenFiles": [
-    "Pasted image 20240213124005.png",
-    "Pasted image 20240213123950.png",
-    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/1. Intro.md",
+    "README.md",
     "MALWARE ANALISYS/Rangeforce/8. Visualização de atividades de malware.md",
+    "IMAGES/Pasted image 20240213124005.png",
+    "IMAGES/Pasted image 20240213123950.png",
+    "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly/1. Intro.md",
     "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
     "REVERSE ENGINEERING/OST2/Architecture 1001 x86-64 Assembly",
     "REVERSE ENGINEERING/OST2/Visual Studio/6. Interface de depuração de montagem.md",
@@ -176,7 +177,6 @@
     "REVERSE ENGINEERING/OST2/Visual Studio/2. Criando um novo projeto.md",
     "REVERSE ENGINEERING/OST2/Visual Studio/1. Download e Instalação.md",
     "REVERSE ENGINEERING/OST2/Visual Studio",
-    "README.md",
     "MALWARE ANALISYS/OST2",
     "MALWARE ANALISYS/Rangeforce/7. Introdução à análise interativa do comportamento.md",
     "SECURITY OPERATIONS/Análise de Log de Rede.md",
@@ -208,7 +208,6 @@
     "IMAGES/Pasted image 20240128175142.png",
     "IMAGES/vYVwg5pHd764ZC1-_oZpcv_n-iMM68H4X.jpg",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
-    "IMAGES/Pasted image 20240119212558.png",
-    "IMAGES/Pasted image 20231228140400.png"
+    "IMAGES/Pasted image 20240119212558.png"
   ]
 }
