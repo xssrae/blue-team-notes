@@ -5,11 +5,12 @@ Here i have all my Obsidian notes for study Blue Team. Some notes haven't been e
 Feel free to use and consult them if you want.
 
 # Study platforms and Blogs
+- [LetsDefend](https://app.letsdefend.io/)
 - [Range Force](https://portal.rangeforce.com/)
 - [Cisco Skills For All](https://skillsforall.com/dashboard)
 - [Tryhackme](https://tryhackme.com/)
-- [LetsDefend](https://app.letsdefend.io/)
 - [Security Blue Team](https://www.securityblue.team/)
+
 # Folders
 - [Forensics](https://github.com/xssrae/Blue-Team-Notes/tree/main/FORENSICS)
 - [Criptography](https://github.com/xssrae/Blue-Team-Notes/tree/main/CRIPTOGRAPHY)
