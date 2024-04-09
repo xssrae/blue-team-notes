@@ -163,6 +163,14 @@
   },
   "active": "de35b12a23db69bf",
   "lastOpenFiles": [
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/6. LFI e RFI.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/5. IDOR.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/4. Command Injection.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/3. XSS.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/2. SQL Injection.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/1. Detectando Ataques Web.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web",
     "MALWARE ANALISYS/LetsDefend/Análise Estática/7. Strings.md",
     "MALWARE ANALISYS/LetsDefend/Análise Estática/8. Importação e exportação.md",
     "MALWARE ANALISYS/LetsDefend/Análise Estática/6. Hash do Arquivo.md",
@@ -193,11 +201,6 @@
     "pininfo.md",
     "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/1. Introduction to Vulnerability Management.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Gerenciamento de Incidentes",
-    "SECURITY OPERATIONS/Vulnerability Management - Security BlueTeam/2. Ambiente de teste.md",
-    "SECURITY OPERATIONS/Análise de Log de Rede.md",
-    "REVERSE ENGINEERING/RE 1 - LetsDefend/3. Conceitos básicos.md",
-    "MALWARE ANALISYS/OST2/OST2_LP_MA.pdf",
-    "MALWARE ANALISYS/Rangeforce/9. Análise interativa do comportamento - Estudo de caso.md",
     "IMAGES/Pasted image 20240213184554.png",
     "IMAGES/Pasted image 20240213184447.png",
     "IMAGES/Pasted image 20240213184358.png",
@@ -206,9 +209,6 @@
     "Pasted image 20240213184554.png",
     "Pasted image 20240213184447.png",
     "Pasted image 20240213184358.png",
-    "MALWARE ANALISYS/Rangeforce/1. Sandboxing Malware.md",
-    "MALWARE ANALISYS/Rangeforce/2. Estágios da análise de malware.md",
-    "MALWARE ANALISYS/Rangeforce/3. Técnicas de evasão de sandbox.md",
     "Untitled.canvas"
   ]
 }
