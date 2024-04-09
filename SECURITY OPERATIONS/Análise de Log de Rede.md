@@ -97,48 +97,90 @@ O usuário do Test_User enviou uma solicitação POST para o endereço “https[
 
 ---
 # Análise de Log IDS/IPS
-
 ### IDS vs IPS
 
 - IPS: Sistema de Prevenção de Intrusão - Detecta e previne as atividades suspeitas
 - IDS: Sistema de Detecção de Intrusão - Apenas detecta as atividades suspeitas
 
-
 ==IDS e IPS têm base de dados de assinatura. Uma assinatura é um conjunto de regras projetadas para detectar ataques conhecidos. A estrutura que apresenta esse conjunto de regras centralmente é chamada de banco de dados de assinaturas==. Um link de banco de dados de assinatura de código aberto é compartilhado abaixo. Esses bancos de dados são constantemente atualizados contra vetores de ataque recém-formados. As atividades de rede que desencadeiam essas assinaturas podem ser bloqueadas ou detectadas apenas de acordo com a ação determinada da assinatura.
 
 ==Os sistemas IDS/IPS são uma das fontes que gerarão os alarmes mais frequentes entre todas as ferramentas de segurança para a detecção de ataques baseados em rede ou host. Como muitos ataques estão na rede ou no ponto final, os sistemas IDS/IPS podem detectar e bloquear muitas atividades suspeitas==. Muitas categorias de ataque diferentes, como ataque log4j, atividades pós-digitalização, explorações de vulnerabilidade, atividades de botnet podem ser detectadas e prevenidas com a ajuda de tecnologias IDS/IPS que são soluções de segurança vitais para as organizações.
 
-Os analistas SOC geralmente ==podem acessar esses outputs produzidos por IDS / IPS via SIEM ou SOAR==. O SIEM apresenta os alarmes IDS/IPS coletados ao Analista SOC, transformando-os em alarmes com várias regras/correlações de acordo com seu nível, categoria e ocorrência em determinado número de vezes. Esses alertas podem ser investigados como um caso independente ou como um grupo, associando-os a diferentes alertas (Algumas SIEMs também podem estabelecer essa relação). Por exemplo, após a atividade de varredura portuária, a geração de eventos/alarmes na categoria de exploit em direção aos alvos que o país escanear a partir do mesmo endereço IP de origem será associada umas às outras e consideradas como um flagrodo vermelho do ponto de vista da segurança.
-
+Os analistas SOC geralmente ==podem acessar esses outputs produzidos por IDS / IPS via SIEM ou SOAR==. 
 
 ### Um log IPS de amostra
 ```
 date=2022-05-21 time=14:06:38 devname="FG500" devid="FG5HSTF109K" eventtime=1650585615163261716 tz="+0300" logid="0419016384" type="utm" subtype="ips" eventtype="signature" level="alert" vd="root" severity="high" srcip=12.11.2.4 srccountry="Reserved" dstip=19.66.201.16 dstcountry="United States" srcintf="AOS_LAN" srcintfrole="lan" dstintf="Wan_RL" dstintfrole="lan" sessionid=254830141 action="detected" proto=17 service="DNS" policyid=2 poluuid="6b5c8674-a36a-51ec-bbfd-2250544a9125" policytype="policy" attack="DNS.Server.Label.Buffer.Overflow" srcport=57673 dstport=53 direction="incoming" attackid=37088 profile="default" ref="http://www.fortinet.com/ids/VID37088" incidentserialno=254762092 msg="misc: DNS.Server.Label.Buffer.Overflow" crscore=30 craction=8192 crlevel="high"
 ```
 
-
 Após informações devem ser investigadas em detalhes ao analisar os logs IDS/IPS;
 
 - A direção do ataque (inbound ou outbound) deve ser verificada.
 - O nível de gravidade do evento deve ser verificado. Os níveis são geralmente definidos como baixo, médio, alto, crítico. Níveis altos e críticos indicam que a atividade é mais importante, é necessária uma ação rápida e um falso positivo é menos provável.
-
-Um ==estado de gatilho de assinatura diferente deve ser verificado entre a mesma fonte e alvo==. Acionar diferentes assinaturas significa que o nível de gravidade do evento deve ser aumentado e uma ação mais rápida deve ser tomada. O evento é resolvido dentro do acordo de nível de serviço (SLA) dependendo do seu nível de gravidade em caso de seguintes situações como:
-
-- Se uma única assinatura for acionada,
-- Não há pedidos diferentes da fonte relevante,
-- Não há aceitação diferente nos logs de firewall.
-- A porta/serviço é especificado no detalhe de ataque em execução na porta de destino? Se estiver em execução, o nível do evento deve ser elevado ao nível crítico, e o sistema alvo deve ser verificado para infecção. Também deve ser verificado se uma resposta foi devolvida ao sistema relevante a partir da fonte. Se a resposta for não, bloquear o endereço IP de ataque como precaução seria uma ação apropriada.
-- A ação é tomada apenas deteção ou também foi bloqueada? Se o ataque for bloqueado e não houver outras solicitações do mesmo endereço IP no firewall, podemos esperar um pouco mais para tomar a ação. No entanto, se a ação tomada para o ataque for apenas uma detecção, outras solicitações semelhantes devem ser revisadas e a ação de bloqueio deve ser aplicada se o conteúdo das solicitações provenientes do endereço IP não for falso positivo.
-
-
-Por exemplo, no registro de exemplo dado acima, o ataque “DNS.Server.Label.Buffer.Overflow” foi detectado na solicitação feita a partir do endereço IP 12.11.2.4 para a porta 53 do endereço IP 19.66.201.16. Quando olhamos para os detalhes deste ataque que podem ser acessados através do ref. url no log, vemos que o Tftpd32 DNS Server foi afetado por este ataque. Se o serviço em execução na porta 53 da porta 19.66.201.16 não for o servidor DNS Tftpd32, podemos dizer que ele não foi afetado por este ataque. No entanto, o fato de que ele diz "detectado" na seção de ação significa que esse tráfego ocorre entre a origem e o destino e não está bloqueado. Em outras palavras, essa solicitação feita pelo endereço IP de origem chegou ao serviço em execução na porta 53 do endereço IP de destino.
-
-Após atividades suspeitas pode ser detectado monitorando os registros IDS/IPS;
-- Atividades de digitalização portuária
-- Exames de vulnerabilidade
-- Ataques de injeção de código
-- Ataques de Bruto-Força
-- Ataques Dos/Ddos
-- Atividades de Trojan
-- Atividades de botnet
 ---
+# Análise de Log de WAF
+WAF (Web Application Firewall) é a tecnologia usada para proteger aplicativos baseados na web. A análise de firewall ou logs IDS/IPS sozinhos geralmente não é suficiente para a detecção de ataques baseados na web. As principais razões para isso são o problema de descarregamento SSL e o controle dos dados na parte da carga (dados) da solicitação da web.
+
+O SSL Offload é a descriptografia do tráfego criptografado pelo SSL. O principal objetivo do sistema é reduzir a carga e aumentar o desempenho, bem como descriptografar o tráfego / solicitação criptografado para tornar o conteúdo visível e controlável do ponto de vista de segurança. Desta forma, os vetores de ataque invisíveis no tráfego criptografado tornam-se detectáveis ou evitáveis.
+  
+Em redes equipadas com WAF, as solicitações dos usuários finais chegam ao WAF primeiro pela internet. Em seguida, o WAF inspeciona a solicitação e toma a decisão se ela será transferida para o Servidor Web ou não. Uma das maiores vantagens dos WAFs aqui é que ele pode executar SSL Off-load, o que ajuda a examinar o conteúdo do tráfego HTTPS. A WAF sem capacidade de descarregamento SSL não pode fornecer uma proteção completa e eficaz, pois não poderá inspecionar a parte de carga (dados) da comunicação HTTPS.
+
+  
+
+![](https://letsdefend.io/images/training/network-log-analysis/WAF.png)
+
+  
+
+Os produtos F5 Big-IP, Citrix, Imperva, Forti WAF são exemplos de soluções WAF que são bem conhecidas no mercado. Além disso, as soluções Cloudflare, Akamai, AWS WAF também são usadas como soluções WAF em nuvem.
+
+  
+
+Os sistemas WAF são geralmente os sistemas que lidam com as solicitações de acesso à web nos sistemas públicos enfrentados. Portanto, podemos dizer que os ==WAFs são os primeiros sistemas a detectar ataques da web== e os registros WAF são os que ajudam os analistas SOC a detectar atividades suspeitas. Os analistas precisam saber sua localização na rede claramente ao analisar os registros do WAF. Os registros WAF são a fonte dos logs para visualizar todas as solicitações da Web feitas e analisar ataques detectados na Web ou ataques bloqueados na web. Ao examinar os alertas gerados para ataques detectados ou bloqueados, a reputação do endereço IP de origem que criou o log / alerta deve ser analisada também outras atividades semelhantes que o IP de origem criado em outras fontes de log (como IDS / IDS, Firewall) deve ser investigada.
+
+
+### Um log de amostra de WAF:
+
+data-2022-01-26 hora'19:47:26 log_id-20000008 msg_id'000018341360 deviced_id-FVVM08 vd'"root" timezone"(GMT+3:00)Istambul" timezone_dayst'"GMTg-3" type-attack' main_type"Alert_Policy" src-19.6.150.138 src_port-56334 dst-172.16.10.10 dst_port-443 http_meth-od-get http_url??v?(SELETO (CHR(113)|CHR(120)|CHR(120)|CHR(120)|CHR(118)|CHR(118)|CHR(118)|CEND))::text" http_host"app.letsdefend.io" http_agent""Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9b1) Gecko/2007110703 Firefox/3.0b1" msg"" Parameter (Passa-segue) acionado ID 030000136"Digite"SQL Injection" (em inglês)
+
+
+Quando o registro de amostra WAF é analisado, as informações IP de origem e de destino devem ser verificadas, pois faz referência a um tipo de ataque de injeção de injeção de alto nível de gravidade por meio da detecção de assinaturas. A resposta do WAF a esta solicitação deve ser verificada se o ataque relatado for um ataque da web genérico (Intection, XSS, etc.) genérico como acima. Se o WAF não bloqueou esta solicitação, a resposta retornada pelo aplicativo deve ser verificada. O código de resposta da resposta da aplicação (IIS, Apache, Nginx, etc.) também é importante e deve ser investigado. Se o aplicativo respondeu 200 para um ataque que o WAF não poderia impedir, isso significa que o ataque chegou ao servidor web e retornou uma resposta bem-sucedida. Em alguns casos, o aplicativo retorna o código 200, enquanto ele deve realmente retornar o código 404 devido a algumas deficiências técnicas no aplicativo. Estes podem ser considerados como falsos positivos para os pedidos relevantes.
+
+  
+
+Exemplos de algumas das respostas da candidatura;
+- 200 (OK): O pedido foi recebido com sucesso e a resposta foi devolvida.
+- 301 (Redirecionamento Permanente): O pedido foi redirecionado para um local diferente.
+- 403 (proibido): Não é permitido o acesso de dados solicitados.
+- 404 (Não encontrado): O conteúdo solicitado não pôde ser encontrado.
+- 503 (Serviço Indisponível): O servidor não pode responder. 
+
+Categorias do código de resposta:
+- Respostas informativas (100-199)
+- Respostas bem sucedidas (200-299)
+- Mensagens de Redirecionamento (300–399)
+- Respostas de erro do cliente (400-499)
+- Respostas de erro do servidor (500–599)
+
+  
+
+A solicitação de conexão no registro de amostra WAF compartilhada acima foi bloqueada devido às assinaturas que o WAF reconhece como maliciosa e gerou um alerta sobre ele por causa das expressões no URL dentro da solicitação provenientes do endereço IP 19.6.150.138 para a porta 443 do host 172.16.10.10 atrás do WAF. O nome da política aplicado para solicitações correspondentes a essa assinatura no WAF é "Alert_Policy" e a ação está definida como "alerta", que é o modo de monitoramento. Portanto, podemos dizer que o pedido chegou ao anfitrião de destino.
+
+  
+
+Se o ataque relatado pelo WAF para as solicitações for para detectar vulnerabilidades, é necessário analisar os detalhes da vulnerabilidade a ser detectada aqui. Por exemplo, se o seu aplicativo da Web está sendo executado no ASP e a detecção de vulnerabilidade é uma varredura específica do aplicativo PHP, então não se pode esperar que tal vulnerabilidade seja relatada. No entanto, ainda seria uma boa prática tomar quaisquer ações para o endereço IP que executam a atividade de digitalização. A melhor ação a ser tomada aqui é bloquear as solicitações de entrada no primeiro dispositivo de segurança no gateway onde as solicitações de entrada interagem pela primeira vez com a nossa rede.
+ 
+
+Podemos ajudar a usar logs WAF ao analisar as seguintes detecções:
+- Detecção de vulnerabilidades web conhecidas
+- Detecção de variedade de ataques web como Injeção SQL, Ataque XSS, Injeção de Código, Diretório Traversal
+- Detecção de uso de método suspeito, como PUT, DELETE
+- Informações de endereço IP solicitantes
+- Informações de URL mais solicitadas
+
+**Método de solicitação:** Indica qual método a solicitação é feita dentro da linguagem web. Os principais métodos de solicitação são os seguintes.
+
+- GET: É usado para recuperar dados do servidor
+- POST: Ele é usado para enviar dados para o servidor (como imagem, vídeo)
+- DELETE: É usado para excluir os dados no servidor
+- PUT: Ele é usado para enviar dados para o servidor (os dados enviados criam ou atualizam arquivos)
+- OPTIONS: Diga quais métodos o servidor aceita

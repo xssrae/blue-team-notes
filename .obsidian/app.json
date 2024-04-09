@@ -2,5 +2,6 @@
   "livePreview": true,
   "defaultViewMode": "source",
   "showInlineTitle": true,
-  "alwaysUpdateLinks": true
+  "alwaysUpdateLinks": true,
+  "focusNewTab": true
 }
