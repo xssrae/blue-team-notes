@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
                 "mode": "source",
                 "source": false
               }
@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "b2eae5ceaa5ce5d4",
@@ -111,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -128,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "THREAT INTELLIGENCE/Introduction to the (AR)² Framework.md"
               }
             }
           }
@@ -148,7 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 305.5
+    "width": 281.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -161,54 +160,54 @@
       "obsidian-extract-pdf-highlights:PDF Highlights": false
     }
   },
-  "active": "eda1ebd4a817dca5",
+  "active": "de35b12a23db69bf",
   "lastOpenFiles": [
+    "IMAGES/Pasted image 20231228140400.png",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Introdução ao Splunk/3. Universal Forwarders.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Introdução ao Splunk/2_3. Instalação.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Introdução ao Splunk/1. Dimensionamento.md",
+    "FORENSICS/USB Forensics/1.Chave de registro USB.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Brute-Force/Exemplo de detecção de força bruta do Windows Login.md",
+    "FORENSICS/USB Forensics",
+    "FORENSICS/1.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Brute-Force/Exemplo de detecção de ataque de força bruta de login HTTP.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Brute-Force/Exemplo de detecção de ataque de força bruta SSH.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/1. Detectando Ataques Web.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Brute-Force",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Análise de Email de Phishing.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Cyber Threat Intelligence/1. Intro.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Cyber Threat Intelligence",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Introdução ao Splunk/4.Adicionar dados ao Splunk.md",
+    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
+    "SECURITY OPERATIONS/SOC - LetsDefend/SOC Fundamentals.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/4. Exercício de comprometimento de perímetro.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/3. Ataques de desfiguração de sites.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/2. Ataques em Sistemas Remotos.md",
+    "SECURITY OPERATIONS/Incident Response - Range Force/1. Tratamento de incidentes.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Estática/4.Desempacotando Malware.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Estática/3. Packing e Unpacking.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Estática/1.  Preparação para o curso.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Estática/2. Introdução à Análise de Malware Estática.md",
+    "MALWARE ANALISYS/LetsDefend/Fundamentos.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica/6.Meu malware não faz nada.md",
+    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica/5. Exemplo de Análise 2.md",
     "IMAGES/canvas.png",
     "IMAGES/9PyL3rU0JhcDhjD1_TUy0vR933lrI_wK-.jpg",
     "IMAGES/canvas19.png",
-    "README.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/8. Importação e exportação.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/7. DIrecionamento Aberto.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/6. LFI e RFI.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/5. IDOR.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/4. Command Injection.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/3. XSS.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/2. SQL Injection.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web/1. Detectando Ataques Web.md",
     "SECURITY OPERATIONS/SOC - LetsDefend/Detectando Ataques Web",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/7. Strings.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/6. Hash do Arquivo.md",
-    "MALWARE ANALISYS/LetsDefend/Fundamentos.md",
-    "SECURITY OPERATIONS/Introdução ao Splunk/1.Dimensionamento.md",
-    "SECURITY OPERATIONS/Introdução ao Splunk",
+    "SECURITY OPERATIONS/SOC - LetsDefend/Introdução ao Splunk",
     "MALWARE ANALISYS/AFD/Cartilha Sandbox - AFD.pdf",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/5. Análise do formato de arquivo.md",
-    "MALWARE ANALISYS/LetsDefend/Lab para Análise de Malware/1.md",
-    "MALWARE ANALISYS/MOBILE Malware Analysis/Arquitetura Android.md",
     "IMAGES/Pasted image 20240324153033.png",
     "MALWARE ANALISYS/MOBILE Malware Analysis/33093-introduction-to-android-malware-analysis.pdf",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/4.Desempacotando Malware.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/3. Packing e Unpacking.md",
     "MALWARE ANALISYS/Livros/Practical_Malware_Analysis_--_Desconocido_--_2012_--_90d0630edc03979c70e70e12bb13511f_--_Annas_Archive.pdf",
     "MALWARE ANALISYS/Livros/Malware Detection and Analysis with Windows.pdf",
     "IMAGES/Pasted image 20240323125755.png",
     "MALWARE ANALISYS/MOBILE Malware Analysis/Untitled",
-    "MALWARE ANALISYS/MOBILE Malware Analysis",
-    "Untitled.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/1.  Preparação para o curso.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Estática/2. Introdução à Análise de Malware Estática.md",
-    "MALWARE ANALISYS/LetsDefend/Análise Dinâmica/1. Introdução.md",
-    "MALWARE ANALISYS/AFD/SlidesMalwareStarter.pdf",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Gerenciamento de Incidentes/1. Introdução e Definições Básicas.md",
-    "SECURITY OPERATIONS/Malware Incident Handling Walkthrough/1. Incident Response.md",
-    "pininfo.md",
-    "SECURITY OPERATIONS/SOC - LetsDefend/Gerenciamento de Incidentes",
     "IMAGES/Pasted image 20240213184554.png",
     "IMAGES/Pasted image 20240213184447.png",
     "IMAGES/Pasted image 20240213184358.png",
     "IMAGES/Pasted image 20240213184654.png",
     "Pasted image 20240213184654.png",
-    "Pasted image 20240213184554.png",
     "Untitled.canvas"
   ]
 }
